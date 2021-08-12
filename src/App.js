@@ -1,32 +1,14 @@
 import "./App.css";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Main from "./components/Main";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">My cakes</header>
-      <main className="App-main">
-        <ul>
-          <li className="Item-card">
-            <img src="" alt="" />
-            <h3 className="Item-card__name">Chocolate cake</h3>
-          </li>
-          <li className="Item-card">
-            <img src="" alt="" />
-            <h3 className="Item-card__name">Chocolate cake</h3>
-          </li>
-          <li className="Item-card">
-            <img src="" alt="" />
-            <h3 className="Item-card__name">Chocolate cake</h3>
-          </li>
-        </ul>
-      </main>
-      <footer className="App-footer">
-        <ul>
-          <li>MyCakes</li>
-          <li>Plus</li>
-          <li>Favs</li>
-        </ul>
-      </footer>
+      <Header />
+      <Main />
+      <Footer />
     </div>
   );
 }
