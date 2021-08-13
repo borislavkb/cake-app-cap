@@ -6,7 +6,7 @@ export default function About() {
   return (
     <div className="Favs-page">
       <Header />
-      <h1>Favs section</h1>
+      <h1>Favs page</h1>
       <Footer />
     </div>
   );
