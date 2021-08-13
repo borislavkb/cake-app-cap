@@ -1,3 +1,4 @@
+import "./Main.css";
 import ItemCard from "./ItemCard";
 
 export default function Main() {
