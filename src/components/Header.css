@@ -2,4 +2,5 @@
   display: flex;
   justify-content: center;
   background-color: var(--color-background);
+  border-bottom: 5px solid var(--color-icons);
 }
