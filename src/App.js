@@ -11,7 +11,9 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <Route component={MyCakes} exact path="/mycakes" />
+        <Route exact path="/mycakes">
+          <MyCakes />
+        </Route>
         <Route component={Favs} path="/favs" />
         <Route component={Home} exact path="/" />
       </Switch>
