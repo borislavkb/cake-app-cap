@@ -1,11 +1,11 @@
-.App-footer {
+.footer {
   display: flex;
   justify-content: space-around;
   border-top: 5px solid var(--color-icons);
   background-color: var(--color-background);
 }
 
-.App-footer__navigation {
+.footer__navigation {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
