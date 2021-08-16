@@ -1,5 +1,4 @@
 import "./AddNewCake.css";
-import { BiImageAdd } from "react-icons/bi";
 
 export default function AddNewCake() {
   return (

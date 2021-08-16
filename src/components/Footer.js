@@ -4,7 +4,6 @@ import { BsPlusSquare } from "react-icons/bs";
 import { GiCakeSlice } from "react-icons/gi";
 import { MdFavoriteBorder } from "react-icons/md";
 import { IconContext } from "react-icons";
-import { icons } from "react-icons/lib";
 
 export default function Footer() {
   return (
