@@ -1,13 +1,14 @@
 import "./Footer.css";
+import { NavLink } from "react-router-dom";
 
 export default function Footer() {
   return (
     <footer className="Footer">
-      <ul className="Footer__navigation">
-        <li>MyCakes</li>
-        <li>Plus</li>
-        <li>Favs</li>
-      </ul>
+      <nav className="Footer__navigation">
+        <NavLink to="/">MyCakes</NavLink>
+        <NavLink to="/add">Plus</NavLink>
+        <NavLink to="/favs">Favs</NavLink>
+      </nav>
     </footer>
   );
 }
