@@ -12,6 +12,9 @@
 }
 
 .frame {
-
   border: var(--color-icons) solid;
+}
+
+img {
+  height: 5rem;
 }
