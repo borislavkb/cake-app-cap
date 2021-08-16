@@ -1,5 +1,4 @@
 import "./AddNewCake.css";
-import { BiImageAdd } from "react-icons/bi";
 
 export default function AddNewCake() {
   return (
@@ -7,7 +6,6 @@ export default function AddNewCake() {
       <i className="input-file--icon"></i>
       <input
         type="file"
-        alt="select an image"
         id="imageInput"
         name="imageInput"
         accept="image/png, image/jpeg"
