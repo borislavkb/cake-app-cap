@@ -1,0 +1,13 @@
+.Single-page {
+  text-align: center;
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 50px 1fr 50px;
+}
+
+.Single-page__recipe {
+  overflow-y: scroll;
+  display: flex;
+
+  flex-direction: column;
+}

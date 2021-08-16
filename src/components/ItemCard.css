@@ -8,5 +8,10 @@
   margin: 1rem;
   border: hidden;
   border-radius: 15px;
+  height: auto;
+}
+
+.frame {
+
   border: var(--color-icons) solid;
 }
