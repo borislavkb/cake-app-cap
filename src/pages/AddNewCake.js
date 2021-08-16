@@ -1,10 +1,13 @@
 import "./AddNewCake.css";
+import { BiImageAdd } from "react-icons/bi";
 
 export default function AddNewCake() {
   return (
     <form className="form">
+      <i className="input-file--icon"></i>
       <input
         type="file"
+        alt="select an image"
         id="imageInput"
         name="imageInput"
         accept="image/png, image/jpeg"
@@ -17,6 +20,7 @@ export default function AddNewCake() {
         cols="40"
         placeholder="Insert a list of ingredients"
       ></textarea>
+
       <textarea
         id="inputRecipe"
         name="inputRecipe"
