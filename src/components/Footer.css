@@ -1,13 +1,13 @@
-.footer {
+.Footer {
   display: flex;
   justify-content: space-around;
   border-top: 5px solid var(--color-icons);
   background-color: var(--color-background);
 }
 
-.footer__navigation {
+.Footer__navigation {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   list-style-type: none;
   gap: 1rem;
