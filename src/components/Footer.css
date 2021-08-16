@@ -1,15 +1,14 @@
-.App-footer {
+.Footer {
   display: flex;
   justify-content: space-around;
   border-top: 5px solid var(--color-icons);
   background-color: var(--color-background);
 }
 
-.App-footer__navigation {
+.Footer__navigation {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  list-style-type: none;
   gap: 1rem;
   color: var(--color-icons);
 }
