@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="App-footer">
-      <ul className="App-footer__navigation">
+    <footer className="Footer">
+      <ul className="Footer__navigation">
         <NavLink to="/">
           <li>MyCakes</li>
         </NavLink>
