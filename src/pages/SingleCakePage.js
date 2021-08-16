@@ -1,13 +1,9 @@
 import "./SingleCakePage.css";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import ItemCard from "../components/ItemCard";
 
 export default function SingleCakePage() {
   return (
     <div className="Single-page">
-      <Header />
-
       <section className="Single-page__recipe">
         <ItemCard />
         <h3>Ingredients List:</h3>
@@ -45,7 +41,6 @@ export default function SingleCakePage() {
           <li>Step 7</li>
         </ol>
       </section>
-      <Footer />
     </div>
   );
 }
