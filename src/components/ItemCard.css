@@ -18,3 +18,7 @@
 img {
   height: 5rem;
 }
+
+.Item-card__name {
+  color: var(--color-icons);
+}
