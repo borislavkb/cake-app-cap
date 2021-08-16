@@ -2,7 +2,7 @@ import "./Header.css";
 
 export default function Header() {
   return (
-    <header className="App-header">
+    <header className="Header">
       <h1>My cakes app</h1>
     </header>
   );

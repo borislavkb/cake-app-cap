@@ -1,5 +1,4 @@
 import "./App.css";
-import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { Switch, Route } from "react-router-dom";
 import MyCakes from "./pages/MyCakes";
