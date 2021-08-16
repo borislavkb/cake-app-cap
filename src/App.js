@@ -1,5 +1,6 @@
 import "./App.css";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import { Switch, Route } from "react-router-dom";
 import MyCakes from "./pages/MyCakes";
 import Favs from "./pages/Favs";
