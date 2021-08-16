@@ -5,7 +5,8 @@
   justify-content: center;
   gap: 1rem;
   background: var(--color-background);
-  border: 2px solid var(--color-icons);
+  border-top: 2px solid var(--color-icons);
+  border-bottom: 2px solid var(--color-icons);
 }
 
 .btn-submit {
