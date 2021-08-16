@@ -14,7 +14,9 @@ function App() {
         <Route path="/cakes/:id">
           <SingleCakePage />
         </Route>
-        <Route component={Favs} path="/favs" />
+        <Route path="/favs">
+          <Favs />
+        </Route>
         <Route exact path="/">
           <MyCakes />
         </Route>
