@@ -1,7 +1,7 @@
 import "./Header.css";
 import { Switch, Route } from "react-router-dom";
 
-export default function Header({ text }) {
+export default function Header() {
   return (
     <header className="Header">
       <Switch>
@@ -15,7 +15,7 @@ export default function Header({ text }) {
           <h1>Insert a new cake</h1>
         </Route>
         <Route exact path="/">
-          <h1>Check the cake!</h1>
+          <h1> Catalogue</h1>
         </Route>
       </Switch>
     </header>
