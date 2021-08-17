@@ -2,7 +2,7 @@
   text-align: center;
   display: grid;
   height: 100vh;
-  grid-template-rows: 50px 1fr 50px;
+  grid-template-rows: 2rem 1fr 2rem;
 }
 
 .Single-page__recipe {

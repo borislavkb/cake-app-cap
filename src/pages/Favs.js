@@ -1,9 +1,6 @@
 import "./Favs.css";
+import Main from "../components/Main";
 
 export default function About() {
-  return (
-    <div className="Favs-page">
-      <h1>Favs page</h1>
-    </div>
-  );
+  return <Main />;
 }

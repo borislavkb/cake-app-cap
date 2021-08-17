@@ -1,0 +1,19 @@
+.AddNewCake__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: var(--color-background);
+}
+
+.AddNewCake__btn-submit {
+  background-color: var(--color-text);
+  border: none white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
+  color: whitesmoke;
+}

@@ -1,4 +1,4 @@
-.Item-card {
+.ItemCard {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -12,6 +12,13 @@
 }
 
 .frame {
-
   border: var(--color-icons) solid;
+}
+
+.ItemCard__image {
+  height: 5rem;
+}
+
+.ItemCard__name {
+  color: var(--color-icons);
 }

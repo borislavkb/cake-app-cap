@@ -1,14 +1,16 @@
 .Footer {
-  display: flex;
-  justify-content: space-around;
   border-top: 5px solid var(--color-icons);
   background-color: var(--color-background);
 }
 
 .Footer__navigation {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  gap: 1rem;
+  color: var(--color-icons);
+  margin-top: 0.1em;
+}
+
+.global-class-icon {
   color: var(--color-icons);
 }

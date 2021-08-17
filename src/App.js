@@ -5,6 +5,7 @@ import { Switch, Route } from "react-router-dom";
 import MyCakes from "./pages/MyCakes";
 import Favs from "./pages/Favs";
 import SingleCakePage from "./pages/SingleCakePage";
+import AddNewCake from "./pages/AddNewCake";
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
         </Route>
         <Route path="/favs">
           <Favs />
+        </Route>
+        <Route path="/add">
+          <AddNewCake />
         </Route>
         <Route exact path="/">
           <MyCakes />
