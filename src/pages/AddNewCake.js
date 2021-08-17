@@ -2,7 +2,7 @@ import "./AddNewCake.css";
 
 export default function AddNewCake() {
   return (
-    <form className="form">
+    <form className="AddNewCake__form">
       <i className="input-file--icon"></i>
       <input
         type="file"
@@ -28,7 +28,7 @@ export default function AddNewCake() {
         placeholder="Insert a recipe"
       ></textarea>
 
-      <input type="submit" value="Submit" className="btn-submit" />
+      <input type="submit" value="Submit" className="AddNewCake__btn-submit" />
     </form>
   );
 }

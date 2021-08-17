@@ -1,4 +1,4 @@
-.Item-card {
+.ItemCard {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -15,10 +15,10 @@
   border: var(--color-icons) solid;
 }
 
-img {
+.ItemCard__image {
   height: 5rem;
 }
 
-.Item-card__name {
+.ItemCard__name {
   color: var(--color-icons);
 }

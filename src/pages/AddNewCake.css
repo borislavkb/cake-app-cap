@@ -1,4 +1,4 @@
-.form {
+.AddNewCake__form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,13 +7,13 @@
   background: var(--color-background);
 }
 
-.btn-submit {
+.AddNewCake__btn-submit {
   background-color: var(--color-text);
-  border: 0px solid white;
-  padding: 0.5em 1.5em;
-  border-radius: 0.5em;
+  border: none white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
   cursor: pointer;
-  font-size: 1.6em;
-  letter-spacing: 0.1em;
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
   color: whitesmoke;
 }

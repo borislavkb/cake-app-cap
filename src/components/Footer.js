@@ -10,13 +10,13 @@ export default function Footer() {
     <IconContext.Provider value={{ className: "global-class-icon" }}>
       <footer className="Footer">
         <nav className="Footer__navigation">
-          <NavLink className="Footer__navigation item" to="/">
+          <NavLink className="Footer__navigation--item" to="/">
             <GiCakeSlice size="2rem" />
           </NavLink>
-          <NavLink className="Footer__navigation item" to="/add">
+          <NavLink className="Footer__navigation--item" to="/add">
             <BsPlusSquare size="2rem" />
           </NavLink>
-          <NavLink className="Footer__navigation item" to="/favs">
+          <NavLink className="Footer__navigation--item" to="/favs">
             <MdFavoriteBorder size="2rem" />
           </NavLink>
         </nav>
