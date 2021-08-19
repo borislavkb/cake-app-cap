@@ -4,7 +4,6 @@ import InputIngredients from "../components/inputComponents/inputIngredients";
 import ImageInput from "../components/inputComponents/imageInput";
 
 import InputItemName from "../components/inputComponents/InputItemName";
-import { useState } from "react";
 
 export default function AddNewCake() {
   function handleSubmit(event) {
