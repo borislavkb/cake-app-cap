@@ -9,7 +9,6 @@ export default function AddNewCake() {
   function handleSubmit(event) {
     event.preventDefault(event);
     const form = event.target;
-    console.log(form);
     const stepsToRecipe = form.inputRecipe.value;
     const ingredients = form.inputIngredients.value;
     const itemName = form.itemName.value;
@@ -19,8 +18,6 @@ export default function AddNewCake() {
       stepsToRecipe,
       ingredients,
     };
-
-    console.log(recipeData);
 
     const recipesArray = JSON.parse(localStorage.getItem("recipesArray")) || [];
     recipesArray.push(recipeData);
