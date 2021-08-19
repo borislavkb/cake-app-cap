@@ -7,22 +7,26 @@ import InputItemName from "../components/inputComponents/InputItemName";
 import { useState } from "react";
 
 export default function AddNewCake() {
-  const [recipes, setRecipes] = useState([]);
-
   function handleSubmit(event) {
-    event.PreventDefault();
+    event.preventDefault(event);
     const form = event.target;
     console.log(form);
-    const newRecipe = form.inputRecipe.value;
+    const stepsToRecipe = form.inputRecipe.value;
+    const ingredients = form.inputIngredients.value;
+    const itemName = form.itemName.value;
 
-    const addRecipe = [
-      ...recipes,
-      {
-        id: 33,
-        recipe: newRecipe,
-      },
-    ];
-    setRecipes(addRecipe);
+    const recipeData = {
+      itemName,
+      stepsToRecipe,
+      ingredients,
+    };
+
+    console.log(recipeData);
+
+    const recipesArray = JSON.parse(localStorage.getItem("recipesArray")) || [];
+    recipesArray.push(recipeData);
+    localStorage.setItem("recipesArray", JSON.stringify(recipesArray));
+
     form.reset();
   }
 
