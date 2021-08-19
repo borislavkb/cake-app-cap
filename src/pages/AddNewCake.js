@@ -2,6 +2,7 @@ import "./AddNewCake.css";
 import InputRecipe from "../components/inputComponents/inputRecipe";
 import InputIngredients from "../components/inputComponents/inputIngredients";
 import ImageInput from "../components/inputComponents/imageInput";
+import { v4 as uuidv4 } from "uuid";
 
 import InputItemName from "../components/inputComponents/InputItemName";
 
@@ -14,6 +15,7 @@ export default function AddNewCake() {
     const itemName = form.itemName.value;
 
     const recipeData = {
+      id: uuidv4(),
       itemName,
       stepsToRecipe,
       ingredients,
