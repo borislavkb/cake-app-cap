@@ -1,17 +1,13 @@
 import "./AddNewCake.css";
-import InputRecipe from "../components/inputComponents/inputRecipe";
-import InputIngredients from "../components/inputComponents/inputIngredients";
-import ImageInput from "../components/inputComponents/imageInput";
+import Form from "../components/Form";
 import { v4 as uuidv4 } from "uuid";
-
-import InputItemName from "../components/inputComponents/InputItemName";
 
 export default function AddNewCake() {
   function handleSubmit(event) {
-    event.preventDefault(event);
+    event.preventDefault();
     const form = event.target;
     const stepsToRecipe = form.inputRecipe.value;
-    const ingredients = form.inputIngredients.value;
+    const ingredients = form.cakeIngredients.value;
     const itemName = form.itemName.value;
 
     const recipeData = {
@@ -28,15 +24,5 @@ export default function AddNewCake() {
     form.reset();
   }
 
-  return (
-    <form className="AddNewCake__form" onSubmit={handleSubmit}>
-      <i className="input-file--icon"></i>
-      <ImageInput />
-      <InputItemName />
-      <InputIngredients />
-      <InputRecipe />
-
-      <input type="submit" value="Submit" className="AddNewCake__btn-submit" />
-    </form>
-  );
+  return <Form onSubmit={handleSubmit} />;
 }
