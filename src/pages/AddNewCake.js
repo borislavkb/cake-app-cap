@@ -17,8 +17,6 @@ export default function AddNewCake() {
       cakeRecipe,
     };
 
-    console.log(recipeData);
-
     const recipesArray = JSON.parse(localStorage.getItem("recipesArray")) || [];
     recipesArray.push(recipeData);
     localStorage.setItem("recipesArray", JSON.stringify(recipesArray));
