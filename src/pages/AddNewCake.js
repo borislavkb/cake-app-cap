@@ -1,34 +1,28 @@
 import "./AddNewCake.css";
+import Form from "../components/Form";
+import { v4 as uuidv4 } from "uuid";
 
 export default function AddNewCake() {
-  return (
-    <form className="AddNewCake__form">
-      <i className="input-file--icon"></i>
-      <input
-        type="file"
-        alt="select an image"
-        id="imageInput"
-        name="imageInput"
-        accept="image/png, image/jpeg"
-      />
-      <input type="text" id="name" name="itemName" placeholder="cake name" />
-      <textarea
-        id="inputIngredients"
-        name="inputIngredients"
-        rows="5"
-        cols="40"
-        placeholder="Insert a list of ingredients"
-      ></textarea>
+  function handleSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+    const stepsToRecipe = form.inputRecipe.value;
+    const ingredients = form.cakeIngredients.value;
+    const itemName = form.itemName.value;
 
-      <textarea
-        id="inputRecipe"
-        name="inputRecipe"
-        rows="5"
-        cols="40"
-        placeholder="Insert a recipe"
-      ></textarea>
+    const recipeData = {
+      id: uuidv4(),
+      itemName,
+      stepsToRecipe,
+      ingredients,
+    };
 
-      <input type="submit" value="Submit" className="AddNewCake__btn-submit" />
-    </form>
-  );
+    const recipesArray = JSON.parse(localStorage.getItem("recipesArray")) || [];
+    recipesArray.push(recipeData);
+    localStorage.setItem("recipesArray", JSON.stringify(recipesArray));
+
+    form.reset();
+  }
+
+  return <Form onSubmit={handleSubmit} />;
 }
