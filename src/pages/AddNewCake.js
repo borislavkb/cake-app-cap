@@ -6,9 +6,9 @@ export default function AddNewCake() {
   function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
-    const stepsToRecipe = form.inputRecipe.value;
+    const itemName = form.cakeName.value;
     const ingredients = form.cakeIngredients.value;
-    const itemName = form.itemName.value;
+    const stepsToRecipe = form.cakeRecipe.value;
 
     const recipeData = {
       id: uuidv4(),
