@@ -6,15 +6,15 @@ export default function AddNewCake() {
   function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
-    const stepsToRecipe = form.inputRecipe.value;
-    const ingredients = form.cakeIngredients.value;
-    const itemName = form.itemName.value;
+    const cakeName = form.cakeName.value;
+    const cakeIngredients = form.cakeIngredients.value;
+    const cakeRecipe = form.cakeRecipe.value;
 
     const recipeData = {
       id: uuidv4(),
-      itemName,
-      stepsToRecipe,
-      ingredients,
+      cakeName,
+      cakeIngredients,
+      cakeRecipe,
     };
 
     const recipesArray = JSON.parse(localStorage.getItem("recipesArray")) || [];
