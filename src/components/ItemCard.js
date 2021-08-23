@@ -1,6 +1,6 @@
 import "./ItemCard.css";
 
-export default function ItemCard(props) {
+export default function ItemCard(props, onClick) {
   return (
     <div className="ItemCard box">
       <li className="ItemCard">
@@ -8,9 +8,6 @@ export default function ItemCard(props) {
 
         <h2 className="ItemCard__name">{props.name}</h2>
         <p className="ItemCard__ingredients">{props.ingredients}</p>
-        <button className="ItemCard__button--favs" type="button">
-          FAV
-        </button>
       </li>
     </div>
   );

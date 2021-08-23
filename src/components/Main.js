@@ -1,7 +1,7 @@
 import "./Main.css";
 import ItemCard from "./ItemCard";
 
-export default function Main(recipe) {
+export default function Main(recipe, onClick) {
   const recipes = JSON.parse(localStorage.getItem("recipesArray"));
 
   return (
