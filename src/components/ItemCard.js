@@ -1,6 +1,7 @@
 import "./ItemCard.css";
 import ChCakeImg from "../images/chocolate.png";
 import { RiFilePaper2Line } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 export default function ItemCard(props, handleDelete, showRecipe) {
   function handleDelete() {
@@ -24,13 +25,15 @@ export default function ItemCard(props, handleDelete, showRecipe) {
             X
           </button>
 
-          <RiFilePaper2Line
-            size="1.5rem"
-            s
-            color="#d84064"
-            className="ItemCard__link"
-            onClick={showRecipe}
-          />
+          <Link to={`/cakes/${props.id}`}>
+            <RiFilePaper2Line
+              size="1.5rem"
+              s
+              color="#d84064"
+              className="ItemCard__link"
+              onClick={showRecipe}
+            />
+          </Link>
         </div>
       </li>
     </div>

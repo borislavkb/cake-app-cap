@@ -1,8 +1,6 @@
 import "./Main.css";
 import ItemCard from "./ItemCard";
-import { Link } from "react-router-dom";
 import { useState } from "react";
-import { RiFilePaper2Line } from "react";
 
 export default function Main(recipe, onClick) {
   const recipesDB = JSON.parse(localStorage.getItem("recipesArray"));
@@ -11,13 +9,11 @@ export default function Main(recipe, onClick) {
 
   return (
     <main className="App-main">
-      <Link to={`/cakes/${recipe.id}`}>
-        <div>
-          {recipes.map((recipe) => {
-            return <ItemCard key={recipe.id} name={recipe.cakeName} />;
-          })}
-        </div>
-      </Link>
+      <div>
+        {recipes.map((recipe) => {
+          return <ItemCard key={recipe.id} name={recipe.cakeName} />;
+        })}
+      </div>
     </main>
   );
 }
