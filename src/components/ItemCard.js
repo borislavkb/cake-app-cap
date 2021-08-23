@@ -7,10 +7,6 @@ export default function ItemCard(props, handleDelete, showRecipe) {
   function handleDelete() {
     console.log("Clicked");
   }
-
-  function showRecipe() {
-    console.log("Recipe show");
-  }
   return (
     <div className="ItemCard box">
       <li className="ItemCard">
@@ -27,11 +23,10 @@ export default function ItemCard(props, handleDelete, showRecipe) {
 
           <Link to={`/cakes/${props.id}`}>
             <RiFilePaper2Line
-              size="1.5rem"
+              size="1.6rem"
               s
               color="#d84064"
               className="ItemCard__link"
-              onClick={showRecipe}
             />
           </Link>
         </div>

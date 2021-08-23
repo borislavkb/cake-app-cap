@@ -36,3 +36,7 @@
   align-items: center;
   gap: 2rem;
 }
+
+.ItemCard__link {
+  align-self: center;
+}
