@@ -1,4 +1,7 @@
 import "./SingleCakePage.css";
+
+import mockImage from "../images/red.png";
+
 const mockObj = {
   id: "a53c3284-3bd9-46c8-858c-5a9d8faa57cf",
   cakeName: "Chocolate cake",
@@ -10,10 +13,17 @@ const mockObj = {
 
 export default function SingleCakePage() {
   return (
-    <div className="Single-page">
-      <section className="Single-page__recipe">
-        <h1></h1>
-      </section>
-    </div>
+    <main className="SinglePage__content">
+      <h2 className="SinglePage__cake--title">{mockObj.cakeName}</h2>
+      <img
+        src={mockImage}
+        alt={mockObj.cakeName}
+        className="SinglePage__cake--image"
+      />
+      <h3>Ingredients:</h3>
+      <p>{mockObj.cakeIngredients}</p>
+      <h3>Recipe: </h3>
+      <p>{mockObj.cakeRecipe}</p>
+    </main>
   );
 }
