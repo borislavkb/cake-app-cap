@@ -22,3 +22,17 @@
 .ItemCard__name {
   color: var(--color-icons);
 }
+
+.ItemCard__button {
+  background-color: var(--color-icons);
+  color: var(--color-button-text);
+  border: 2px hidden;
+  border-radius: 25px;
+  padding: 0.25rem 0.2rem;
+}
+
+.ItemCard--btnDiv {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}

@@ -2,6 +2,7 @@ import "./Main.css";
 import ItemCard from "./ItemCard";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { RiFilePaper2Line } from "react";
 
 export default function Main(recipe, onClick) {
   const recipesDB = JSON.parse(localStorage.getItem("recipesArray"));
