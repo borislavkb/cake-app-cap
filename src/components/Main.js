@@ -1,10 +1,12 @@
 import "./Main.css";
 import ItemCard from "./ItemCard";
 import { Link } from "react-router-dom";
-import { directive } from "@babel/types";
+import { useState } from "react";
 
 export default function Main(recipe, onClick) {
-  const recipes = JSON.parse(localStorage.getItem("recipesArray"));
+  const recipesDB = JSON.parse(localStorage.getItem("recipesArray"));
+
+  const [recipes, setRecipes] = useState(recipesDB);
 
   return (
     <main className="App-main">
