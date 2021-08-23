@@ -1,12 +1,13 @@
 import "./ItemCard.css";
 
-export default function ItemCard({ image, name, ingredients }) {
+export default function ItemCard(props) {
   return (
     <div className="ItemCard box">
       <li className="ItemCard">
-        <img src={image} alt="description" className="ItemCard__image" />
-        <h2 className="ItemCard__name">{name}</h2>
-        <p className="ItemCard__ingredients">{ingredients}</p>
+        {/* <img src={props.image} alt="description" className="ItemCard__image" /> */}
+
+        <h2 className="ItemCard__name">{props.name}</h2>
+        <p className="ItemCard__ingredients">{props.ingredients}</p>
       </li>
     </div>
   );
