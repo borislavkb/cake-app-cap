@@ -1,4 +1,5 @@
 import "./SingleCakePage.css";
+import { useParams } from "react-router-dom";
 
 import mockImage from "../images/red.png";
 
@@ -12,9 +13,13 @@ const mockObj = {
 };
 
 export default function SingleCakePage() {
+  const { id } = useParams();
+
   return (
     <main className="SinglePage__content">
-      <h2 className="SinglePage__cake--title">{mockObj.cakeName}</h2>
+      <h2 className="SinglePage__cake--title">
+        {mockObj.cakeName} {id}
+      </h2>
       <img
         src={mockImage}
         alt={mockObj.cakeName}
