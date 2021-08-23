@@ -18,7 +18,7 @@ export default function MyCakesList() {
               className="ItemCard__image"
             />
 
-            <h2 className="ItemCard__name">{cake.name}</h2>
+            <h2 className="ItemCard__name">{cake.cakeName}</h2>
             <div className="ItemCard--btnDiv">
               <button className="ItemCard__button delete">X</button>
 
