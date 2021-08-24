@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function ItemCard(props, handleDelete) {
   return (
-    <div className="ItemCard box">
+    <div className="ItemCard--box">
       <li className="ItemCard" key={props.id}>
         <img src={ChCakeImg} alt="description" className="ItemCard__image" />
 

@@ -1,10 +1,13 @@
 import "./SingleCakePage.css";
 import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 import mockImage from "../images/red.png";
 
 export default function SingleCakePage() {
   const cakes = JSON.parse(localStorage.getItem("recipesArray"));
+
+  const [showItems, setShowItems] = useState();
 
   const { id } = useParams();
 

@@ -2,12 +2,20 @@ import "./MyCakesList.css";
 import { Link } from "react-router-dom";
 import { RiFilePaper2Line } from "react-icons/ri";
 import ChCakeImg from "../images/chocolate.png";
+import { useEffect, useState } from "react";
+
+const recipes = JSON.parse(localStorage.getItem("recipesArray"));
 
 export default function MyCakesList() {
-  const recipes = JSON.parse(localStorage.getItem("recipesArray"));
+  const [list, setList] = useState(recipes);
+
+  function handleDelete(id) {
+    const updatedList = list.filter((cake) => cake.id !== id);
+    setList(updatedList);
+  }
 
   function renderCakes() {
-    return recipes.map((cake, index) => {
+    return list.map((cake, index) => {
       const id = index + 1;
       return (
         <li className="ItemCard" key={cake.id}>
@@ -15,7 +23,12 @@ export default function MyCakesList() {
 
           <h2 className="ItemCard__name">{cake.cakeName}</h2>
           <div className="ItemCard--btnDiv">
-            <button className="ItemCard__button delete">X</button>
+            <button
+              className="ItemCard__button delete"
+              onClick={() => handleDelete(cake.id)}
+            >
+              X
+            </button>
 
             <Link to={`/cakes/${id}`}>
               <RiFilePaper2Line
