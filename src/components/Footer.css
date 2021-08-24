@@ -13,4 +13,9 @@
 
 .global-class-icon {
   color: var(--color-icons);
+  size: 2rem;
+}
+
+.Footer__navigation--item {
+  color: var(--color-icons);
 }
