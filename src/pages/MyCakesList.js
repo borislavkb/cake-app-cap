@@ -9,10 +9,22 @@ const recipes = JSON.parse(localStorage.getItem("recipesArray"));
 
 export default function MyCakesList() {
   const [list, setList] = useState(recipes);
+  const [favs, setFavs] = useState([]);
 
   function handleDelete(id) {
     const updatedList = list.filter((cake) => cake.id !== id);
     setList(updatedList);
+  }
+
+  function toggleFavs(id) {
+    const toggledList = list.filter((cake) => cake.id === id);
+
+    const favoriteCakes =
+      JSON.parse(localStorage.getItem("favoriteCakes")) || [];
+    favoriteCakes.push(toggledList);
+    localStorage.setItem("favoriteCakes", JSON.stringify(favoriteCakes));
+
+    console.log(favoriteCakes);
   }
 
   function renderCakes() {
@@ -30,11 +42,14 @@ export default function MyCakesList() {
             >
               X
             </button>
-            <MdFavoriteBorder
-              size="2rem"
-              color="#d84064"
-              className="ItemCard__toggle"
-            />
+            <button className="ItemCard__button--fav">
+              <MdFavoriteBorder
+                onClick={() => toggleFavs(cake.id)}
+                size="2rem"
+                color="#d84064"
+                className="ItemCard__toggle"
+              />
+            </button>
 
             <Link to={`/cakes/${id}`}>
               <RiFilePaper2Line
