@@ -2,7 +2,6 @@ import "./Footer.css";
 import { NavLink } from "react-router-dom";
 import { BsPlusSquare } from "react-icons/bs";
 import { GiCakeSlice } from "react-icons/gi";
-import { MdFavoriteBorder } from "react-icons/md";
 import { IconContext } from "react-icons";
 import { FaStoreAlt } from "react-icons/fa";
 

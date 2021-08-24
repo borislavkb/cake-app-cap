@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { RiFilePaper2Line } from "react-icons/ri";
 import ChCakeImg from "../images/chocolate.png";
 import { useState } from "react";
+import { MdFavoriteBorder } from "react-icons/md";
 
 const recipes = JSON.parse(localStorage.getItem("recipesArray"));
 
@@ -29,6 +30,11 @@ export default function MyCakesList() {
             >
               X
             </button>
+            <MdFavoriteBorder
+              size="2rem"
+              color="#d84064"
+              className="ItemCard__toggle"
+            />
 
             <Link to={`/cakes/${id}`}>
               <RiFilePaper2Line
