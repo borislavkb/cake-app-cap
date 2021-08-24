@@ -1,6 +1,5 @@
 import "./Favs.css";
-import Main from "../components/Main";
 
-export default function About() {
-  return <Main />;
+export default function Favs() {
+  return <main className="App-main"></main>;
 }

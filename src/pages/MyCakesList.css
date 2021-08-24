@@ -1,3 +1,23 @@
+.My-cakes-page {
+  text-align: center;
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 2rem 1fr 2rem;
+}
+
+.App-main {
+  display: flex;
+  justify-content: center;
+  overflow-y: scroll;
+  background-color: var(--color-background);
+}
+
+.App-main a {
+  text-decoration: none;
+}
+
+/*card */
+
 .ItemCard {
   display: flex;
   justify-content: flex-start;
@@ -31,7 +51,7 @@
   padding: 0.25rem 0.2rem;
 }
 
-.ItemCard__button--box {
+.ItemCard--btnDiv {
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -39,9 +59,4 @@
 
 .ItemCard__link {
   align-self: center;
-}
-
-.Icon {
-  color: var(--color-icons);
-  size: 1.6rem;
 }

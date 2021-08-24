@@ -1,46 +1,38 @@
 import "./SingleCakePage.css";
-import ItemCard from "../components/ItemCard";
+import { useParams } from "react-router-dom";
+
+import mockImage from "../images/red.png";
 
 export default function SingleCakePage() {
-  return (
-    <div className="Single-page">
-      <section className="Single-page__recipe">
-        <ItemCard />
-        <h3>Ingredients List:</h3>
+  const cakes = JSON.parse(localStorage.getItem("recipesArray"));
 
-        <ul>
-          <li>Sugar</li>
-          <li>Spice</li>
-          <li>Everything nice</li>
-          <li>Chemical X</li>
-          <li>Sugar</li>
-          <li>Spice</li>
-          <li>Everything nice</li>
-          <li>Chemical X</li>
-          <li>Sugar</li>
-          <li>Spice</li>
-          <li>Everything nice</li>
-          <li>Chemical X</li>
-          <li>Sugar</li>
-          <li>Spice</li>
-          <li>Everything nice</li>
-          <li>Chemical X</li>
-          <li>Sugar</li>
-          <li>Spice</li>
-          <li>Everything nice</li>
-          <li>Chemical X</li>
-        </ul>
-        <h3>Steps:</h3>
-        <ol>
-          <li>Step 1</li>
-          <li>Step 2</li>
-          <li>Step 3</li>
-          <li>Step 4</li>
-          <li>Step 5</li>
-          <li>Step 6</li>
-          <li>Step 7</li>
-        </ol>
-      </section>
-    </div>
-  );
+  const { id } = useParams();
+
+  function renderSingleCake() {
+    return (
+      <main className="SinglePage__content">
+        {cakes.map((cake, index) => {
+          if (id == index + 1)
+            return (
+              <div>
+                <h2 className="SinglePage__cake--title" key={cake.id}>
+                  {cake.cakeName} {id}
+                </h2>
+                <img
+                  src={mockImage}
+                  alt={cake.cakeName}
+                  className="SinglePage__cake--image"
+                />
+                <h3>Ingredients:</h3>
+                <p>{cake.cakeIngredients}</p>
+                <h3>Recipe: </h3>
+                <p>{cake.cakeRecipe}</p>
+              </div>
+            );
+        })}
+      </main>
+    );
+  }
+
+  return renderSingleCake();
 }

@@ -2,7 +2,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Switch, Route } from "react-router-dom";
-import MyCakes from "./pages/MyCakes";
+import MyCakesList from "./pages/MyCakesList";
 import Favs from "./pages/Favs";
 import SingleCakePage from "./pages/SingleCakePage";
 import AddNewCake from "./pages/AddNewCake";
@@ -22,7 +22,7 @@ function App() {
           <AddNewCake />
         </Route>
         <Route exact path="/">
-          <MyCakes />
+          <MyCakesList />
         </Route>
       </Switch>
       <Footer />
