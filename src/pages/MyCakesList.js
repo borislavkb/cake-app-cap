@@ -2,7 +2,7 @@ import "./MyCakesList.css";
 import { Link } from "react-router-dom";
 import { RiFilePaper2Line } from "react-icons/ri";
 import ChCakeImg from "../images/chocolate.png";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const recipes = JSON.parse(localStorage.getItem("recipesArray"));
 

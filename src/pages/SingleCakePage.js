@@ -7,8 +7,6 @@ import mockImage from "../images/red.png";
 export default function SingleCakePage() {
   const cakes = JSON.parse(localStorage.getItem("recipesArray"));
 
-  const [showItems, setShowItems] = useState();
-
   const { id } = useParams();
 
   function renderSingleCake() {
