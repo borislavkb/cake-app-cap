@@ -40,3 +40,8 @@
 .ItemCard__link {
   align-self: center;
 }
+
+.Icon {
+  color: var(--color-icons);
+  size: 1.6rem;
+}

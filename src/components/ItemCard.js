@@ -15,12 +15,8 @@ export default function ItemCard(props, handleDelete) {
             X
           </button>
 
-          <Link to={`/cakes/${props.id}`}>
-            <RiFilePaper2Line
-              size="1.6rem"
-              color="#d84064"
-              className="ItemCard__link"
-            />
+          <Link to={`/cakes/${props.id}`} className="ItemCard__link">
+            <RiFilePaper2Line className="Icon" />
           </Link>
         </div>
       </li>
