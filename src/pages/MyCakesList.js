@@ -4,7 +4,6 @@ import { RiFilePaper2Line } from "react-icons/ri";
 import ChCakeImg from "../images/chocolate.png";
 import { useEffect, useState } from "react";
 import { MdFavoriteBorder } from "react-icons/md";
-import { GiCakeSlice } from "react-icons/gi";
 
 export default function MyCakesList() {
   const [listOfCakes, setListOfCakes] = useState(() => {
