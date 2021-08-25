@@ -2,33 +2,41 @@ import "./MyCakesList.css";
 import { Link } from "react-router-dom";
 import { RiFilePaper2Line } from "react-icons/ri";
 import ChCakeImg from "../images/chocolate.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MdFavoriteBorder } from "react-icons/md";
 
-const recipes = JSON.parse(localStorage.getItem("recipesArray"));
-
 export default function MyCakesList() {
-  const [list, setList] = useState(recipes);
-  const [favs, setFavs] = useState([]);
+  const recipesLS = JSON.parse(localStorage.getItem("recipesArray"));
+  const [listOfCakes, setListOfCakes] = useState(recipesLS);
 
-  function handleDelete(id) {
-    const updatedList = list.filter((cake) => cake.id !== id);
-    setList(updatedList);
+  useEffect(() => {
+    localStorage.setItem("recipesArray", JSON.stringify(listOfCakes));
+  }, [listOfCakes]);
+
+  function handleDeleteItemFromList(id) {
+    const updatedList = listOfCakes.filter((cake) => cake.id !== id);
+    setListOfCakes(updatedList);
   }
 
-  function toggleFavs(id) {
-    const toggledList = list.filter((cake) => cake.id === id);
+  function handleToggleFavouriteCake(id) {
+    const listOfFavouriteCakes = listOfCakes.filter((cake) => cake.id === id);
 
-    const favoriteCakes =
-      JSON.parse(localStorage.getItem("favoriteCakes")) || [];
-    favoriteCakes.push(toggledList);
-    localStorage.setItem("favoriteCakes", JSON.stringify(favoriteCakes));
+    listOfFavouriteCakes[0].isFav = !listOfFavouriteCakes[0].isFav;
 
-    console.log(favoriteCakes);
+    const lisfOfFavouriteCakesIndex = listOfFavouriteCakes.findIndex(
+      (cake) => cake.id === id
+    );
+
+    setListOfCakes([
+      ...listOfCakes.slice(0, lisfOfFavouriteCakesIndex),
+      listOfFavouriteCakes[0],
+      ...listOfCakes.slice(lisfOfFavouriteCakesIndex + 1),
+    ]);
+    console.log(lisfOfFavouriteCakesIndex);
   }
 
-  function renderCakes() {
-    return list.map((cake, index) => {
+  function renderListOfCakeRecipes() {
+    return listOfCakes?.map((cake, index) => {
       const id = index + 1;
       return (
         <li className="ItemCard" key={cake.id}>
@@ -38,16 +46,16 @@ export default function MyCakesList() {
           <div className="ItemCard--btnDiv">
             <button
               className="ItemCard__button delete"
-              onClick={() => handleDelete(cake.id)}
+              onClick={() => handleDeleteItemFromList(cake.id)}
             >
               X
             </button>
             <button className="ItemCard__button--fav">
               <MdFavoriteBorder
-                onClick={() => toggleFavs(cake.id)}
                 size="2rem"
                 color="#d84064"
                 className="ItemCard__toggle"
+                onClick={() => handleToggleFavouriteCake(cake.id)}
               />
             </button>
 
@@ -66,7 +74,7 @@ export default function MyCakesList() {
 
   return (
     <main className="App-main">
-      <ul>{renderCakes()}</ul>
+      <ul>{renderListOfCakeRecipes()}</ul>
     </main>
   );
 }
