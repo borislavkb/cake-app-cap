@@ -8,6 +8,7 @@ import { MdFavoriteBorder } from "react-icons/md";
 export default function MyCakesList() {
   const recipesLS = JSON.parse(localStorage.getItem("recipesArray"));
   const [listOfCakes, setListOfCakes] = useState(recipesLS);
+  const [listOfFavs, setListOfFavs] = useState([]);
 
   useEffect(() => {
     localStorage.setItem("recipesArray", JSON.stringify(listOfCakes));
@@ -19,20 +20,18 @@ export default function MyCakesList() {
   }
 
   function handleToggleFavouriteCake(id) {
-    const listOfFavouriteCakes = listOfCakes.filter((cake) => cake.id === id);
+    const listOfFavouriteCakes = listOfCakes.map((cake) => {
+      if (cake.id === id) {
+        return {
+          ...cake,
+          isFav: !cake.isFav,
+        };
+      }
+      return cake;
+    });
 
-    listOfFavouriteCakes[0].isFav = !listOfFavouriteCakes[0].isFav;
-
-    const lisfOfFavouriteCakesIndex = listOfFavouriteCakes.findIndex(
-      (cake) => cake.id === id
-    );
-
-    setListOfCakes([
-      ...listOfCakes.slice(0, lisfOfFavouriteCakesIndex),
-      listOfFavouriteCakes[0],
-      ...listOfCakes.slice(lisfOfFavouriteCakesIndex + 1),
-    ]);
-    console.log(lisfOfFavouriteCakesIndex);
+    setListOfFavs(listOfFavouriteCakes);
+    console.log(listOfFavouriteCakes);
   }
 
   function renderListOfCakeRecipes() {
