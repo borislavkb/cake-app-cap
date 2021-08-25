@@ -1,9 +1,7 @@
 import "./MyCakesList.css";
-import { Link } from "react-router-dom";
-import { RiFilePaper2Line } from "react-icons/ri";
-import ChCakeImg from "../images/chocolate.png";
+
 import { useEffect, useState } from "react";
-import { MdFavoriteBorder } from "react-icons/md";
+import ItemCard from "../components/ItemCard";
 
 export default function MyCakesList() {
   const [listOfCakes, setListOfCakes] = useState(() => {
@@ -33,7 +31,6 @@ export default function MyCakesList() {
     });
 
     setListOfFavs(listOfFavouriteCakes);
-    console.log(listOfFavouriteCakes);
   }
 
   function renderListOfCakeRecipes() {
@@ -43,39 +40,12 @@ export default function MyCakesList() {
       return listOfCakes?.map((cake, index) => {
         const id = index + 1;
         return (
-          <li className="ItemCard" key={cake.id}>
-            <img
-              src={ChCakeImg}
-              alt="description"
-              className="ItemCard__image"
-            />
-
-            <h2 className="ItemCard__name">{cake.cakeName}</h2>
-            <div className="ItemCard--btnDiv">
-              <button
-                className="ItemCard__button delete"
-                onClick={() => handleDeleteItemFromList(cake.id)}
-              >
-                X
-              </button>
-              <button className="ItemCard__button--fav">
-                <MdFavoriteBorder
-                  size="2rem"
-                  color="#d84064"
-                  className="ItemCard__toggle"
-                  onClick={() => handleToggleFavouriteCake(cake.id)}
-                />
-              </button>
-
-              <Link to={`/cakes/${id}`}>
-                <RiFilePaper2Line
-                  size="1.6rem"
-                  color="#d84064"
-                  className="ItemCard__link"
-                />
-              </Link>
-            </div>
-          </li>
+          <ItemCard
+            object={cake}
+            paramsId={id}
+            onDelete={() => handleDeleteItemFromList(cake.id)}
+            onToggleFav={() => handleToggleFavouriteCake(cake.id)}
+          />
         );
       });
     }
