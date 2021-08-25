@@ -7,8 +7,10 @@ import { MdFavoriteBorder } from "react-icons/md";
 import { GiCakeSlice } from "react-icons/gi";
 
 export default function MyCakesList() {
-  const recipesLS = JSON.parse(localStorage.getItem("recipesArray"));
-  const [listOfCakes, setListOfCakes] = useState(recipesLS);
+  const [listOfCakes, setListOfCakes] = useState(() => {
+    const recipesLS = JSON.parse(localStorage.getItem("recipesArray"));
+    return recipesLS || [];
+  });
   const [listOfFavs, setListOfFavs] = useState([]);
 
   useEffect(() => {
