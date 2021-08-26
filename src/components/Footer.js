@@ -11,13 +11,13 @@ export default function Footer() {
       <footer className="Footer">
         <nav className="Footer__navigation">
           <NavLink className="Footer__navigation--item" to="/">
-            <GiCakeSlice size="2rem" />
+            <GiCakeSlice />
           </NavLink>
           <NavLink className="Footer__navigation--item" to="/add">
-            <BsPlusSquare size="2rem" />
+            <BsPlusSquare />
           </NavLink>
           <NavLink className="Footer__navigation--item" to="/favs">
-            <FaStoreAlt size="2rem" />
+            <FaStoreAlt />
           </NavLink>
         </nav>
       </footer>

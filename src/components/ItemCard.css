@@ -50,3 +50,8 @@
   background: none;
   border: none;
 }
+
+.Icon {
+  font-size: 2rem;
+  color: var(--color-icons);
+}

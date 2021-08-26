@@ -27,19 +27,13 @@ export default function ItemCard({ object, paramsId, onDelete, onToggleFav }) {
         </button>
         <button className="ItemCard__button--fav">
           <MdFavoriteBorder
-            size="2rem"
-            color="#d84064"
-            className="ItemCard__toggle"
+            className="Icon"
             onClick={() => handleToggleFavouriteCake(object.id)}
           />
         </button>
 
         <Link to={`/cakes/${paramsId}`}>
-          <RiFilePaper2Line
-            size="1.6rem"
-            color="#d84064"
-            className="ItemCard__link"
-          />
+          <RiFilePaper2Line className="Icon" />
         </Link>
       </div>
     </li>
