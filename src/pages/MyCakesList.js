@@ -8,6 +8,7 @@ export default function MyCakesList() {
     const recipesLS = JSON.parse(localStorage.getItem("recipesArray"));
     return recipesLS || [];
   });
+  // eslint-disable-next-line no-unused-vars
   const [listOfFavs, setListOfFavs] = useState([]);
 
   useEffect(() => {
