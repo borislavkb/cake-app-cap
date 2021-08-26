@@ -1,6 +1,6 @@
 import "./ListAPI.css";
 import { useEffect, useState } from "react";
-import ItemCard from "../components/ItemCard";
+import ItemCardAPI from "../components/ItemCardAPI";
 
 export default function ListAPI({ object }) {
   const API_ID = "0cab5025";
@@ -22,18 +22,7 @@ export default function ListAPI({ object }) {
     return cakes.map((cake, index) => {
       const id = index + 1;
       console.log(cake);
-      return (
-        <div className="ItemCard" key={cake.id}>
-          <img
-            src={cake.recipe.image}
-            alt={cake.recipe.label}
-            className="ItemCard__image"
-          />
-          <div className="ItemCard--body">
-            <h2 className="ItemCard--title">{cake.recipe.label}</h2>
-          </div>
-        </div>
-      );
+      return <ItemCardAPI props={cake} />;
     });
   }
 

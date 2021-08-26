@@ -1,11 +1,27 @@
-.ItemCard {
+.Recipe-api__card {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  background-color: var(--color-items-background);
+  margin: 1rem;
+  border: hidden;
+  border-radius: 15px;
+  height: auto;
 }
 
-.ItemCard__image {
+.Recipe-api__card__image {
+  width: 100%;
+  display: block;
+  max-height: 200px;
+  object-fit: contain;
+  object-position: top center;
+  margin-bottom: 1em;
 }
 
-.ItemCard--body {
+.Recipe-api__card--body {
 }
 
-.ItemCard--title {
+.Recipe-api__card--title {
 }
