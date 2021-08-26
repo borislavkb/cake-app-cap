@@ -6,6 +6,7 @@ import MyCakesList from "./pages/MyCakesList";
 import Favs from "./pages/Favs";
 import SingleCakePage from "./pages/SingleCakePage";
 import AddNewCake from "./pages/AddNewCake";
+import ListAPI from "./pages/ListAPI";
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
         <Route path="/favs">
           <Favs />
         </Route>
+        <Route path="/API">
+          <ListAPI />
+        </Route>
+
         <Route path="/add">
           <AddNewCake />
         </Route>
