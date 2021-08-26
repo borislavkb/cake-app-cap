@@ -15,6 +15,7 @@ export default function AddNewCake() {
       cakeName,
       cakeIngredients,
       cakeRecipe,
+      isFav: false,
     };
 
     const recipesArray = JSON.parse(localStorage.getItem("recipesArray")) || [];

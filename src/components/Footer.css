@@ -18,4 +18,5 @@
 
 .Footer__navigation--item {
   color: var(--color-icons);
+  font-size: 2rem;
 }

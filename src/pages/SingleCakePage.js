@@ -1,6 +1,5 @@
 import "./SingleCakePage.css";
 import { useParams } from "react-router-dom";
-
 import mockImage from "../images/red.png";
 
 export default function SingleCakePage() {

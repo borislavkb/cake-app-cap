@@ -1,38 +1,60 @@
 import "./MyCakesList.css";
-import { Link } from "react-router-dom";
-import { RiFilePaper2Line } from "react-icons/ri";
-import ChCakeImg from "../images/chocolate.png";
+
+import { useEffect, useState } from "react";
+import ItemCard from "../components/ItemCard";
 
 export default function MyCakesList() {
-  const recipes = JSON.parse(localStorage.getItem("recipesArray"));
+  const [listOfCakes, setListOfCakes] = useState(() => {
+    const recipesLS = JSON.parse(localStorage.getItem("recipesArray"));
+    return recipesLS || [];
+  });
+  // eslint-disable-next-line no-unused-vars
+  const [listOfFavs, setListOfFavs] = useState([]);
 
-  function renderCakes() {
-    return recipes.map((cake, index) => {
-      const id = index + 1;
-      return (
-        <li className="ItemCard" key={cake.id}>
-          <img src={ChCakeImg} alt="description" className="ItemCard__image" />
+  useEffect(() => {
+    localStorage.setItem("recipesArray", JSON.stringify(listOfCakes));
+  }, [listOfCakes]);
 
-          <h2 className="ItemCard__name">{cake.cakeName}</h2>
-          <div className="ItemCard--btnDiv">
-            <button className="ItemCard__button delete">X</button>
+  function handleDeleteItemFromList(id) {
+    const updatedList = listOfCakes.filter((cake) => cake.id !== id);
+    setListOfCakes(updatedList);
+  }
 
-            <Link to={`/cakes/${id}`}>
-              <RiFilePaper2Line
-                size="1.6rem"
-                color="#d84064"
-                className="ItemCard__link"
-              />
-            </Link>
-          </div>
-        </li>
-      );
+  function handleToggleFavouriteCake(id) {
+    const listOfFavouriteCakes = listOfCakes.map((cake) => {
+      if (cake.id === id) {
+        return {
+          ...cake,
+          isFav: !cake.isFav,
+        };
+      }
+      return cake;
     });
+
+    setListOfFavs(listOfFavouriteCakes);
+  }
+
+  function renderListOfCakeRecipes() {
+    if (listOfCakes.length === 0) {
+      return <p>There are no recipes currently stored. Add your recipe ! </p>;
+    } else {
+      return listOfCakes?.map((cake, index) => {
+        const id = index + 1;
+        return (
+          <ItemCard
+            object={cake}
+            paramsId={id}
+            onDelete={() => handleDeleteItemFromList(cake.id)}
+            onToggleFav={() => handleToggleFavouriteCake(cake.id)}
+          />
+        );
+      });
+    }
   }
 
   return (
     <main className="App-main">
-      <ul>{renderCakes()}</ul>
+      <ul>{renderListOfCakeRecipes()}</ul>
     </main>
   );
 }

@@ -60,3 +60,8 @@
 .ItemCard__link {
   align-self: center;
 }
+
+.ItemCard__button--fav {
+  background: none;
+  border: none;
+}

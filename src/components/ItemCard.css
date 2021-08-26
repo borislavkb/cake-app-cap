@@ -45,3 +45,13 @@
   color: var(--color-icons);
   size: 1.6rem;
 }
+
+.ItemCard__button--fav {
+  background: none;
+  border: none;
+}
+
+.Icon {
+  font-size: 2rem;
+  color: var(--color-icons);
+}
