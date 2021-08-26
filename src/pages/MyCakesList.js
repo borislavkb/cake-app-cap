@@ -2,6 +2,7 @@ import "./MyCakesList.css";
 
 import { useEffect, useState } from "react";
 import ItemCard from "../components/ItemCard";
+import { useParams } from "react-router-dom";
 
 export default function MyCakesList() {
   const [listOfCakes, setListOfCakes] = useState(() => {

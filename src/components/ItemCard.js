@@ -18,7 +18,7 @@ export default function ItemCard({ object, paramsId, onDelete, onToggleFav }) {
       <img src={ChCakeImg} alt="description" className="ItemCard__image" />
 
       <h2 className="ItemCard__name">{object.cakeName}</h2>
-      <div className="ItemCard--btnDiv">
+      <div className="ItemCard__button--box">
         <button
           className="ItemCard__button delete"
           onClick={() => handleDeleteItemFromList(object.id)}
