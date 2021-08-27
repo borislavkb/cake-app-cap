@@ -43,7 +43,7 @@
 
 .Icon {
   color: var(--color-icons);
-  size: 1.6rem;
+  font-size: 1.6rem;
 }
 
 .ItemCard__button--fav {

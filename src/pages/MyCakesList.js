@@ -43,6 +43,7 @@ export default function MyCakesList() {
         return (
           <ItemCard
             object={cake}
+            key={cake.id}
             paramsId={id}
             onDelete={() => handleDeleteItemFromList(cake.id)}
             onToggleFav={() => handleToggleFavouriteCake(cake.id)}
