@@ -9,7 +9,7 @@ export default function ListAPI({ object }) {
     const API_ID = process.env.REACT_APP_CAKE_API_ID;
     const API_KEY = process.env.REACT_APP_CAKE_API_KEY;
     const edamamURL = `https://api.edamam.com/api/recipes/v2?type=public&q=cake&app_id=${API_ID}&app_key=${API_KEY}`;
-    fetch(edamamURL)
+    fetch(edamamURL, { mode: "no-cors" })
       .then((res) => res.json())
       .then((data) => {
         setCakes(data.hits);
