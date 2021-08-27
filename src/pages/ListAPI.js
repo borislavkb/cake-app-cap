@@ -22,7 +22,7 @@ export default function ListAPI({ object }) {
   function renderRecipes() {
     return cakes.map((cake, index) => {
       const id = index + 1;
-      return <ItemCardAPI props={cake} id={id} />;
+      return <ItemCardAPI key={cake.id} props={cake} id={id} />;
     });
   }
 
