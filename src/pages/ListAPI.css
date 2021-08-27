@@ -12,16 +12,20 @@
 }
 
 .Recipe-api__card__image {
-  width: 100%;
-  display: block;
   max-height: 200px;
   object-fit: contain;
   object-position: top center;
   margin-bottom: 1em;
-}
-
-.Recipe-api__card--body {
+  border-radius: 50%;
 }
 
 .Recipe-api__card--title {
+  color: var(--color-icons);
+}
+
+.App-main {
+  display: flex;
+  justify-content: center;
+  overflow-y: scroll;
+  background-color: var(--color-background);
 }

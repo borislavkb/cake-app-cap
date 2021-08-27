@@ -22,9 +22,13 @@ export default function ListAPI({ object }) {
   function renderRecipes() {
     return cakes.map((cake, index) => {
       const id = index + 1;
-      return <ItemCardAPI props={cake} />;
+      return <ItemCardAPI props={cake} id={id} />;
     });
   }
 
-  return renderRecipes();
+  return (
+    <main className="App-main">
+      <ul>{renderRecipes()}</ul>
+    </main>
+  );
 }
