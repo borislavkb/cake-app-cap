@@ -4,15 +4,17 @@ import ItemCardAPI from "../components/ItemCardAPI";
 
 export default function ListAPI({ object }) {
   const [cakes, setCakes] = useState([]);
+
   const API_ID = process.env.REACT_APP_CAKE_API_ID;
   const API_KEY = process.env.REACT_APP_CAKE_API_KEY;
-  const edamamURL = `https://api.edamam.com/api/recipes/v2?type=public&q=cake&app_id=${API_ID}&app_key=${API_KEY}`;
+  const URL = `https://api.edamam.com/api/recipes/v2?type=public&q=cake&app_id=${API_ID}&app_key=${API_KEY}`;
 
   useEffect(() => {
-    fetch(edamamURL)
+    fetch(URL)
       .then((res) => res.json())
       .then((data) => {
         setCakes(data.hits);
+        console.log(data.hits);
       })
       .catch((error) => {
         console.log(error);
@@ -20,9 +22,8 @@ export default function ListAPI({ object }) {
   }, []);
 
   function renderRecipes() {
-    return cakes.map((cake, index) => {
-      const id = index + 1;
-      return <ItemCardAPI key={cake.id} props={cake} id={id} />;
+    return cakes.map((cake) => {
+      return <ItemCardAPI key={cake.id} props={cake} />;
     });
   }
 
