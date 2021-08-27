@@ -16,7 +16,7 @@ export default function Footer() {
           <NavLink className="Footer__navigation--item" to="/add">
             <BsPlusSquare />
           </NavLink>
-          <NavLink className="Footer__navigation--item" to="/favs">
+          <NavLink className="Footer__navigation--item" to="/API">
             <FaStoreAlt />
           </NavLink>
         </nav>
