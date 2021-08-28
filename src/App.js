@@ -6,7 +6,7 @@ import MyCakesList from "./pages/MyCakesList";
 import Favs from "./pages/Favs";
 import SingleCakePage from "./pages/SingleCakePage";
 import AddNewCake from "./pages/AddNewCake";
-import { ToastContainer, toast, Zoom, Bounce } from "react-toastify";
+import { ToastContainer, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
         </Route>
       </Switch>
       <Footer />
-      <ToastContainer draggable={false} transition={Zoom} autoclose={5000} />
+      <ToastContainer draggable={false} transition={Bounce} autoclose={5000} />
     </div>
   );
 }

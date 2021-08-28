@@ -35,5 +35,5 @@ export default function AddNewCake() {
     form.reset();
   }
 
-  return <Form onSubmit={handleSubmit} onClick={successToast} />;
+  return <Form onSubmit={handleSubmit} />;
 }
