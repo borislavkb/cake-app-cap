@@ -6,11 +6,14 @@ import MyCakesList from "./pages/MyCakesList";
 import Favs from "./pages/Favs";
 import SingleCakePage from "./pages/SingleCakePage";
 import AddNewCake from "./pages/AddNewCake";
+import { ToastContainer, toast, Zoom, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <div className="App">
       <Header />
+
       <Switch>
         <Route path="/cakes/:id">
           <SingleCakePage />
@@ -26,6 +29,7 @@ function App() {
         </Route>
       </Switch>
       <Footer />
+      <ToastContainer draggable={false} transition={Zoom} autoclose={5000} />
     </div>
   );
 }
