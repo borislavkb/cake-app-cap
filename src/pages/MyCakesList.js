@@ -8,12 +8,19 @@ export default function MyCakesList() {
     const recipesLS = JSON.parse(localStorage.getItem("recipesArray"));
     return recipesLS || [];
   });
-  // eslint-disable-next-line no-unused-vars
-  const [listOfFavs, setListOfFavs] = useState([]);
+
+  const [listOfFavs, setListOfFavs] = useState(() => {
+    const favourites = JSON.parse(localStorage.getItem("favouriteRecipes"));
+    return favourites || [];
+  });
 
   useEffect(() => {
     localStorage.setItem("recipesArray", JSON.stringify(listOfCakes));
   }, [listOfCakes]);
+
+  useEffect(() => {
+    localStorage.setItem("favouriteRecipes", JSON.stringify(listOfFavs));
+  }, [listOfFavs]);
 
   function handleDeleteItemFromList(id) {
     const updatedList = listOfCakes.filter((cake) => cake.id !== id);
