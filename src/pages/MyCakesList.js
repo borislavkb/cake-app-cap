@@ -38,7 +38,7 @@ export default function MyCakesList() {
     if (listOfCakes.length === 0) {
       return <p>There are no recipes currently stored. Add your recipe ! </p>;
     } else {
-      return listOfCakes?.map((cake) => {
+      return listOfCakes?.map((cake, index) => {
         return (
           <ItemCard
             object={cake}
