@@ -28,17 +28,21 @@ export default function MyCakesList() {
     setListOfCakes(updatedList);
   }
 
-  function handleToggleFavouriteCake(clickedRecipe) {
-    const listOfFavouriteCakes = listOfCakes.map((cake) => {
-      if (cake.id === clickedRecipe.id && cake.isFav) {
-        return {
-          ...cake,
-          isFav: !cake.isFav,
-        };
-      }
-    });
+  // very slick solution from Adriana
+  function handleToggleFavouriteCake(id) {
+    const listOfFavouriteCakes = listOfCakes.filter(
+      (savedRecipe) => savedRecipe.id === id
+    );
+    listOfFavouriteCakes[0].isFav = !listOfFavouriteCakes[0].isFav;
 
-    setListOfFavs([...listOfFavs, listOfFavouriteCakes]);
+    const toggledRecipeIndex = listOfCakes.findIndex(
+      (savedRecipe) => savedRecipe.id === id
+    );
+    setListOfFavs([
+      ...listOfCakes.slice(0, toggledRecipeIndex),
+      listOfFavouriteCakes[0],
+      ...listOfCakes.slice(toggledRecipeIndex + 1),
+    ]);
   }
 
   function renderListOfCakeRecipes() {
