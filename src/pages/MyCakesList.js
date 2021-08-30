@@ -18,6 +18,7 @@ export default function MyCakesList() {
     localStorage.setItem("recipesArray", JSON.stringify(listOfCakes));
   }, [listOfCakes]);
 
+  // saves to local if changed
   useEffect(() => {
     localStorage.setItem("favouriteRecipes", JSON.stringify(listOfFavs));
   }, [listOfFavs]);
@@ -27,18 +28,17 @@ export default function MyCakesList() {
     setListOfCakes(updatedList);
   }
 
-  function handleToggleFavouriteCake(id) {
+  function handleToggleFavouriteCake(clickedRecipe) {
     const listOfFavouriteCakes = listOfCakes.map((cake) => {
-      if (cake.id === id) {
+      if (cake.id === clickedRecipe.id && cake.isFav) {
         return {
           ...cake,
           isFav: !cake.isFav,
         };
       }
-      return cake;
     });
 
-    setListOfFavs(listOfFavouriteCakes);
+    setListOfFavs([...listOfFavs, listOfFavouriteCakes]);
   }
 
   function renderListOfCakeRecipes() {
