@@ -8,6 +8,8 @@ import SingleCakePage from "./pages/SingleCakePage";
 import AddNewCake from "./pages/AddNewCake";
 import { ToastContainer, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ListAPI from "./pages/ListAPI";
+
 
 function App() {
   return (
@@ -21,6 +23,10 @@ function App() {
         <Route path="/favs">
           <Favs />
         </Route>
+        <Route path="/API">
+          <ListAPI />
+        </Route>
+
         <Route path="/add">
           <AddNewCake />
         </Route>

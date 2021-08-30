@@ -13,7 +13,7 @@
 
 .global-class-icon {
   color: var(--color-icons);
-  size: 2rem;
+  font-size: 2rem;
 }
 
 .Footer__navigation--item {
