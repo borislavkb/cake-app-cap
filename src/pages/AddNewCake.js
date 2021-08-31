@@ -2,6 +2,7 @@ import "./AddNewCake.css";
 import Form from "../components/Form";
 import { v4 as uuidv4 } from "uuid";
 import { toast } from "react-toastify";
+import { useEffect } from "react";
 
 export default function AddNewCake({ listOfCakes }) {
   const successToast = () => {
@@ -11,6 +12,10 @@ export default function AddNewCake({ listOfCakes }) {
       position: toast.POSITION.TOP_CENTER,
     });
   };
+
+  useEffect(() => {
+    localStorage.setItem("recipesArray", JSON.stringify(listOfCakes));
+  }, [listOfCakes]);
 
   function handleSubmit(event) {
     event.preventDefault();

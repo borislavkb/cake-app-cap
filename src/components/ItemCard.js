@@ -14,7 +14,7 @@ export default function ItemCard({ object, paramsId, onDelete, onToggleFav }) {
   }
 
   return (
-    <li className="ItemCard" key={object.id}>
+    <li className="ItemCard one-edge-shadow" key={object.id}>
       <img src={ChCakeImg} alt="description" className="ItemCard__image" />
 
       <h2 className="ItemCard__name">{object.cakeName}</h2>
@@ -27,12 +27,12 @@ export default function ItemCard({ object, paramsId, onDelete, onToggleFav }) {
         </button>
         <button className="ItemCard__button--fav">
           {object.isFav ? (
-            <IoHeartOutline
+            <IoHeart
               className="Icon"
               onClick={() => handleToggleFavouriteCake(object.id)}
             />
           ) : (
-            <IoHeart
+            <IoHeartOutline
               className="Icon"
               onClick={() => handleToggleFavouriteCake(object.id)}
             />
