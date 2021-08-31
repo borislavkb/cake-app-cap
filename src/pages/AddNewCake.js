@@ -3,7 +3,7 @@ import Form from "../components/Form";
 import { v4 as uuidv4 } from "uuid";
 import { toast } from "react-toastify";
 
-export default function AddNewCake() {
+export default function AddNewCake({ listOfCakes }) {
   const successToast = () => {
     toast("Successfully saved!", {
       className: "custom-toast ",
@@ -34,6 +34,5 @@ export default function AddNewCake() {
 
     form.reset();
   }
-
   return <Form onSubmit={handleSubmit} />;
 }

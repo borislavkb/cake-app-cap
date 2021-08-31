@@ -16,12 +16,19 @@ function App() {
     const recipesLS = JSON.parse(localStorage.getItem("recipesArray"));
     return recipesLS || [];
   });
-  // eslint-disable-next-line no-unused-vars
-  const [listOfFavs, setListOfFavs] = useState([]);
+
+  const [listOfFavs, setListOfFavs] = useState(() => {
+    const favourites = JSON.parse(localStorage.getItem("favouriteRecipes"));
+    return favourites || [];
+  });
 
   useEffect(() => {
     localStorage.setItem("recipesArray", JSON.stringify(listOfCakes));
   }, [listOfCakes]);
+
+  useEffect(() => {
+    localStorage.setItem("favouriteRecipes", JSON.stringify(listOfFavs));
+  }, [listOfFavs]);
 
   function handleDeleteItemFromList(id) {
     const updatedList = listOfCakes.filter((cake) => cake.id !== id);
@@ -29,17 +36,19 @@ function App() {
   }
 
   function handleToggleFavouriteCake(id) {
-    const listOfFavouriteCakes = listOfCakes.map((cake) => {
-      if (cake.id === id) {
-        return {
-          ...cake,
-          isFav: !cake.isFav,
-        };
-      }
-      return cake;
-    });
+    const listOfFavouriteCakes = listOfCakes.filter(
+      (savedRecipe) => savedRecipe.id === id
+    );
+    listOfFavouriteCakes[0].isFav = !listOfFavouriteCakes[0].isFav;
 
-    setListOfFavs(listOfFavouriteCakes);
+    const toggledRecipeIndex = listOfCakes.findIndex(
+      (savedRecipe) => savedRecipe.id === id
+    );
+    setListOfFavs([
+      ...listOfCakes.slice(0, toggledRecipeIndex),
+      listOfFavouriteCakes[0],
+      ...listOfCakes.slice(toggledRecipeIndex + 1),
+    ]);
   }
 
   return (
@@ -51,18 +60,23 @@ function App() {
           <SingleCakePage />
         </Route>
         <Route path="/favs">
-          <Favs />
+          <Favs
+            listOfFavs={listOfFavs}
+            handleDeleteItemFromList={handleDeleteItemFromList}
+            handleToggleFavouriteCake={handleToggleFavouriteCake}
+          />
         </Route>
         <Route path="/API">
           <ListAPI />
         </Route>
 
         <Route path="/add">
-          <AddNewCake />
+          <AddNewCake listOfCakes={listOfCakes} />
         </Route>
         <Route exact path="/">
           <MyCakesList
             listOfCakes={listOfCakes}
+            listOfFavs={listOfFavs}
             handleDeleteItemFromList={handleDeleteItemFromList}
             handleToggleFavouriteCake={handleToggleFavouriteCake}
           />
