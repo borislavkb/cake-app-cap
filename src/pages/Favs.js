@@ -1,13 +1,17 @@
 import "./Favs.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ItemCard from "../components/ItemCard";
 
 export default function Favs() {
-  const allFavouriteCakes = JSON.parse(
-    localStorage.getItem("favouriteRecipes")
-  );
-
-  const [favouriteRecipes, setFavouriteRecipes] = useState(allFavouriteCakes);
+  const [favouriteRecipes, setFavouriteRecipes] = useState(() => {
+    const allFavouriteCakes = JSON.parse(
+      localStorage.getItem("favouriteRecipes")
+    );
+    const filteredFavouriteRecipes = allFavouriteCakes.filter(
+      (recipe) => !recipe.isFav
+    );
+    return filteredFavouriteRecipes || [];
+  });
 
   function renderListOfFavs() {
     if (favouriteRecipes === null) {
@@ -15,7 +19,7 @@ export default function Favs() {
     } else {
       return favouriteRecipes.map((recipe) => {
         return (
-          <ItemCard object={recipe} paramsID={recipe.id} onDelete onToggleFav />
+          <ItemCard object={recipe} paramsID={recipe.id} onToggleFav onDelete />
         );
       });
     }

@@ -28,6 +28,30 @@ export default function MyCakesList() {
     setListOfCakes(updatedList);
   }
 
+  // function toggleFaves(clickedRecipe) {
+  //   isFave(clickedRecipe)
+  //     ? removeFromFaves(clickedRecipe)
+  //     : addToFaves(clickedRecipe);
+  // }
+
+  // function isFave(clickedRecipe) {
+  //   return listOfFavs.find((recipe) => recipe.id === clickedRecipe.id);
+  // }
+
+  // function removeFromFaves(clickedRecipe) {
+  //   const remainingRecipes = listOfFavs.filter(
+  //     (recipe) => recipe.id !== clickedRecipe.id
+  //   );
+  //   setListOfFavs(remainingRecipes);
+  // }
+
+  // function addToFaves(clickedRecipe) {
+  //   const faveRecipes = listOfCakes.find(
+  //     (recipe) => recipe.id === clickedRecipe.id
+  //   );
+  //   setListOfFavs([...listOfFavs, faveRecipes]);
+  // }
+
   // very slick solution from Adriana
   function handleToggleFavouriteCake(id) {
     const listOfFavouriteCakes = listOfCakes.filter(

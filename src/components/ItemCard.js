@@ -2,7 +2,6 @@ import "./ItemCard.css";
 import ChCakeImg from "../images/chocolate.png";
 import { RiFilePaper2Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import { MdFavoriteBorder } from "react-icons/md";
 import { IoHeart, IoHeartOutline } from "react-icons/io5";
 
 export default function ItemCard({ object, paramsId, onDelete, onToggleFav }) {
@@ -26,13 +25,13 @@ export default function ItemCard({ object, paramsId, onDelete, onToggleFav }) {
           X
         </button>
         <button className="ItemCard__button--fav">
-          {!object.isFav ? (
-            <IoHeart
+          {object.isFav ? (
+            <IoHeartOutline
               className="Icon"
               onClick={() => handleToggleFavouriteCake(object.id)}
             />
           ) : (
-            <IoHeartOutline
+            <IoHeart
               className="Icon"
               onClick={() => handleToggleFavouriteCake(object.id)}
             />
