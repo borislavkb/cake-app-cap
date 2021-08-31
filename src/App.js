@@ -9,9 +9,39 @@ import AddNewCake from "./pages/AddNewCake";
 import { ToastContainer, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ListAPI from "./pages/ListAPI";
-
+import { useState, useEffect } from "react";
 
 function App() {
+  const [listOfCakes, setListOfCakes] = useState(() => {
+    const recipesLS = JSON.parse(localStorage.getItem("recipesArray"));
+    return recipesLS || [];
+  });
+  // eslint-disable-next-line no-unused-vars
+  const [listOfFavs, setListOfFavs] = useState([]);
+
+  useEffect(() => {
+    localStorage.setItem("recipesArray", JSON.stringify(listOfCakes));
+  }, [listOfCakes]);
+
+  function handleDeleteItemFromList(id) {
+    const updatedList = listOfCakes.filter((cake) => cake.id !== id);
+    setListOfCakes(updatedList);
+  }
+
+  function handleToggleFavouriteCake(id) {
+    const listOfFavouriteCakes = listOfCakes.map((cake) => {
+      if (cake.id === id) {
+        return {
+          ...cake,
+          isFav: !cake.isFav,
+        };
+      }
+      return cake;
+    });
+
+    setListOfFavs(listOfFavouriteCakes);
+  }
+
   return (
     <div className="App">
       <Header />
@@ -31,7 +61,11 @@ function App() {
           <AddNewCake />
         </Route>
         <Route exact path="/">
-          <MyCakesList />
+          <MyCakesList
+            listOfCakes={listOfCakes}
+            handleDeleteItemFromList={handleDeleteItemFromList}
+            handleToggleFavouriteCake={handleToggleFavouriteCake}
+          />
         </Route>
       </Switch>
       <Footer />
