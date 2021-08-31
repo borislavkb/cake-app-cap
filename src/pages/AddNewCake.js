@@ -30,7 +30,6 @@ export default function AddNewCake() {
       { method: "POST", body: data }
     );
     const file = await res.json();
-    console.log(file);
   };
 
   function handleSubmit(event) {
@@ -46,6 +45,7 @@ export default function AddNewCake() {
       cakeIngredients,
       cakeRecipe,
       isFav: false,
+      // image: https://res.cloudinary.com/cakesapp/image/upload/v1630419977/orl58ycl5zgtbh7fbbyx.jpg
     };
     // const uploadImage = async (e) => {
     //   const files = e.target.files;
