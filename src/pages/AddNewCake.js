@@ -1,10 +1,7 @@
 import "./AddNewCake.css";
-import Form from "../components/Form";
 import { v4 as uuidv4 } from "uuid";
 import { toast } from "react-toastify";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { FaLessThanEqual } from "react-icons/fa";
+import { useState } from "react";
 
 export default function AddNewCake() {
   const successToast = () => {

@@ -9,7 +9,7 @@ import AddNewCake from "./pages/AddNewCake";
 import { ToastContainer, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ListAPI from "./pages/ListAPI";
-
+import About from "./pages/About";
 
 function App() {
   return (
@@ -25,6 +25,9 @@ function App() {
         </Route>
         <Route path="/API">
           <ListAPI />
+        </Route>
+        <Route path="/about">
+          <About />
         </Route>
 
         <Route path="/add">

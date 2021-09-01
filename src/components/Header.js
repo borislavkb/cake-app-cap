@@ -5,6 +5,9 @@ export default function Header() {
   return (
     <header className="Header">
       <Switch>
+        <Route path="/about">
+          <h1>About</h1>
+        </Route>
         <Route path="/API">
           <h1>Random recipes from the Internet !</h1>
         </Route>
