@@ -1,10 +1,7 @@
 import "./AddNewCake.css";
-import Form from "../components/Form";
 import { v4 as uuidv4 } from "uuid";
 import { toast } from "react-toastify";
 import { useState } from "react";
-import axios from "axios";
-import { FaLessThanEqual } from "react-icons/fa";
 
 export default function AddNewCake() {
   const successToast = () => {
@@ -15,7 +12,7 @@ export default function AddNewCake() {
     });
   };
 
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   const uploadImage = async (event) => {
@@ -30,6 +27,8 @@ export default function AddNewCake() {
       { method: "POST", body: data }
     );
     const file = await res.json();
+
+    setImage(file);
   };
 
   function handleSubmit(event) {
@@ -45,7 +44,7 @@ export default function AddNewCake() {
       cakeIngredients,
       cakeRecipe,
       isFav: false,
-      // image: https://res.cloudinary.com/cakesapp/image/upload/v1630419977/orl58ycl5zgtbh7fbbyx.jpg
+      image: image.url,
     };
     // const uploadImage = async (e) => {
     //   const files = e.target.files;
