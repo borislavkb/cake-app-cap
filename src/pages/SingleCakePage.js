@@ -15,7 +15,7 @@ export default function SingleCakePage() {
           <div>
             <h2 className="SinglePage__cake--title">{cake.cakeName}</h2>
             <img
-              src={chocolateCake}
+              src={cake.image_url}
               alt=""
               className="SinglePage__cake--image"
             />

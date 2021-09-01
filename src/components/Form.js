@@ -1,6 +1,10 @@
 export default function Form({ onSubmit, uploadImage }) {
   return (
-    <form className="AddNewCake__form" onSubmit={(onSubmit, uploadImage)}>
+    <form
+      className="AddNewCake__form"
+      onSubmit={onSubmit}
+      onChange={uploadImage}
+    >
       <i className="input-file--icon"></i>
 
       <input

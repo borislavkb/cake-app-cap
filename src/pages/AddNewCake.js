@@ -44,7 +44,7 @@ export default function AddNewCake() {
       cakeIngredients,
       cakeRecipe,
       isFav: false,
-      image: image.url,
+      image_url: image.url,
     };
     // const uploadImage = async (e) => {
     //   const files = e.target.files;
@@ -85,6 +85,11 @@ export default function AddNewCake() {
         name="cakeImage"
         accept="image/png, image/jpeg"
         onChange={uploadImage}
+      />
+      <img
+        src={image.url}
+        alt="file preview"
+        className="AddNewCake__form--imgPreview"
       />
       <input
         type="text"
