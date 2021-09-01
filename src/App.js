@@ -12,15 +12,13 @@ import ListAPI from "./pages/ListAPI";
 import { useState, useEffect } from "react";
 
 function App() {
-  const [listOfCakes, setListOfCakes] = useState(() => {
-    const recipesLS = JSON.parse(localStorage.getItem("recipesArray"));
-    return recipesLS || [];
-  });
+  const [listOfCakes, setListOfCakes] = useState(
+    JSON.parse(localStorage.getItem("recipesArray")) || []
+  );
 
-  const [listOfFavs, setListOfFavs] = useState(() => {
-    const favourites = JSON.parse(localStorage.getItem("favouriteRecipes"));
-    return favourites || [];
-  });
+  const [listOfFavs, setListOfFavs] = useState(
+    JSON.parse(localStorage.getItem("favouriteRecipes")) || []
+  );
 
   useEffect(() => {
     localStorage.setItem("recipesArray", JSON.stringify(listOfCakes));
@@ -29,6 +27,9 @@ function App() {
   useEffect(() => {
     localStorage.setItem("favouriteRecipes", JSON.stringify(listOfFavs));
   }, [listOfFavs]);
+
+  const handleAddNewRecipe = (newCake) =>
+    setListOfCakes([...listOfCakes, newCake]);
 
   function handleDeleteItemFromList(id) {
     const updatedList = listOfCakes.filter((cake) => cake.id !== id);
@@ -50,6 +51,10 @@ function App() {
       ...listOfCakes.slice(toggledRecipeIndex + 1),
     ]);
   }
+  function handleDeleteItemFromFavs(id) {
+    const updatedList = listOfFavs.filter((cake) => cake.id !== id);
+    setListOfFavs(updatedList);
+  }
 
   return (
     <div className="App">
@@ -62,7 +67,7 @@ function App() {
         <Route path="/favs">
           <Favs
             listOfFavs={listOfFavs}
-            handleDeleteItemFromList={handleDeleteItemFromList}
+            handleDeleteItemFromFavs={handleDeleteItemFromFavs}
             handleToggleFavouriteCake={handleToggleFavouriteCake}
           />
         </Route>
@@ -71,7 +76,10 @@ function App() {
         </Route>
 
         <Route path="/add">
-          <AddNewCake listOfCakes={listOfCakes} />
+          <AddNewCake
+            listOfCakes={listOfCakes}
+            handleAddNewRecipe={handleAddNewRecipe}
+          />
         </Route>
         <Route exact path="/">
           <MyCakesList

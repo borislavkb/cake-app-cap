@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import { toast } from "react-toastify";
 import { useEffect } from "react";
 
-export default function AddNewCake({ listOfCakes }) {
+export default function AddNewCake({ listOfCakes, handleAddNewRecipe }) {
   const successToast = () => {
     toast("Successfully saved!", {
       className: "custom-toast ",
@@ -32,9 +32,10 @@ export default function AddNewCake({ listOfCakes }) {
       isFav: false,
     };
 
-    const recipesArray = JSON.parse(localStorage.getItem("recipesArray")) || [];
-    recipesArray.push(recipeData);
-    localStorage.setItem("recipesArray", JSON.stringify(recipesArray));
+    // const recipesArray = JSON.parse(localStorage.getItem("recipesArray")) || [];
+    // recipesArray.push(recipeData);
+    // localStorage.setItem("recipesArray", JSON.stringify(recipesArray));
+    handleAddNewRecipe(recipeData);
     successToast();
 
     form.reset();

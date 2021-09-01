@@ -39,7 +39,7 @@ export default function ItemCard({ object, paramsId, onDelete, onToggleFav }) {
           )}
         </button>
 
-        <Link to={`/cakes/${paramsId}`}>
+        <Link to={`/cakes/${object.id}`}>
           <RiFilePaper2Line className="Icon" />
         </Link>
       </div>

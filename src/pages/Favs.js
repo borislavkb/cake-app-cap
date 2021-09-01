@@ -3,22 +3,20 @@ import ItemCard from "../components/ItemCard";
 
 export default function Favs({
   listOfFavs,
-  handleDeleteItemFromList,
+  handleDeleteItemFromFavs,
   handleToggleFavouriteCake,
 }) {
-  const filteredFavouriteRecipes = listOfFavs.filter((recipe) => !recipe.isFav);
-
   function renderListOfFavs() {
     if (listOfFavs === null) {
       return <h3>There are no saved favourite items! </h3>;
     } else {
-      return filteredFavouriteRecipes.map((recipe) => {
+      return listOfFavs.map((recipe) => {
         return (
           <ItemCard
             object={recipe}
             key={recipe.id}
             paramsId={recipe.id}
-            onDelete={() => handleDeleteItemFromList(recipe.id)}
+            onDelete={() => handleDeleteItemFromFavs(recipe.id)}
             onToggleFav={() => handleToggleFavouriteCake(recipe.id)}
           />
         );
