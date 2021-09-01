@@ -20,3 +20,12 @@
   color: var(--color-icons);
   font-size: 2rem;
 }
+
+.Footer__navigation--item__active {
+  color: cyan;
+}
+
+.active,
+btn:hover {
+  background-color: #d6d6d6;
+}

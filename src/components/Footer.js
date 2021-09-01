@@ -10,13 +10,25 @@ export default function Footer() {
     <IconContext.Provider value={{ className: "global-class-icon" }}>
       <footer className="Footer">
         <nav className="Footer__navigation">
-          <NavLink className="Footer__navigation--item" to="/">
+          <NavLink
+            to="/"
+            className="Footer__navigation--item"
+            activeClassName="Footer__navigation--item__active"
+          >
             <GiCakeSlice />
           </NavLink>
-          <NavLink className="Footer__navigation--item" to="/add">
+          <NavLink
+            to="/add"
+            className="Footer__navigation--item"
+            activeClassName="Footer__navigation--item__active"
+          >
             <BsPlusSquare />
           </NavLink>
-          <NavLink className="Footer__navigation--item" to="/API">
+          <NavLink
+            to="/API"
+            className="Footer__navigation--item"
+            activeClassName="Footer__navigation--item__active"
+          >
             <FaStoreAlt />
           </NavLink>
         </nav>

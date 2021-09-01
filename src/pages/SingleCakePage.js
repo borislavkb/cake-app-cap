@@ -8,10 +8,6 @@ export default function SingleCakePage() {
 
   const recipesArray = JSON.parse(localStorage.getItem("recipesArray")) || [];
 
-  const ratingChanged = (newRating) => {
-    console.log(newRating);
-  };
-
   function renderSingleCake() {
     return recipesArray
       .filter((cake) => cake.id === id)
@@ -27,9 +23,10 @@ export default function SingleCakePage() {
             <ReactStars
               className="SinglePage__cake--rating"
               count={5}
-              onChange={ratingChanged}
+              onChange
               size={24}
               activeColor="#ffd700"
+              value={3}
             />
 
             <h3 className="SinglePage__cake--ingredients">Ingredients:</h3>

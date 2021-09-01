@@ -11,9 +11,9 @@ export default function ItemCardAPI({ props, id }) {
       />
       <div className="Recipe-api__card--body">
         <h2 className="Recipe-api__card--title">{props.recipe.label}</h2>
-        <Link to={`/cakes/${id}`}>
+        <a href={props.recipe.url}>
           <RiFilePaper2Line className="Icon" />
-        </Link>
+        </a>
       </div>
     </li>
   );

@@ -43,6 +43,7 @@ export default function AddNewCake() {
       cakeName,
       cakeIngredients,
       cakeRecipe,
+      rating: 0,
       isFav: false,
       // image: https://res.cloudinary.com/cakesapp/image/upload/v1630419977/orl58ycl5zgtbh7fbbyx.jpg
     };
