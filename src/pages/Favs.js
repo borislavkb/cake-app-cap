@@ -11,15 +11,17 @@ export default function Favs({
       return <h3>There are no saved favourite items! </h3>;
     } else {
       return listOfFavs.map((recipe) => {
-        return (
-          <ItemCard
-            object={recipe}
-            key={recipe.id}
-            paramsId={recipe.id}
-            onDelete={() => handleDeleteItemFromFavs(recipe.id)}
-            onToggleFav={() => handleToggleFavouriteCake(recipe.id)}
-          />
-        );
+        if (recipe.isFav) {
+          return (
+            <ItemCard
+              object={recipe}
+              key={recipe.id}
+              paramsId={recipe.id}
+              onDelete={() => handleDeleteItemFromFavs(recipe.id)}
+              onToggleFav={() => handleToggleFavouriteCake(recipe.id)}
+            />
+          );
+        }
       });
     }
   }
