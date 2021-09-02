@@ -1,5 +1,4 @@
 import "./ItemCard.css";
-import ChCakeImg from "../images/chocolate.png";
 import { RiFilePaper2Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import { MdFavoriteBorder } from "react-icons/md";
@@ -15,7 +14,11 @@ export default function ItemCard({ object, paramsId, onDelete, onToggleFav }) {
 
   return (
     <li className="ItemCard" key={object.id}>
-      <img src={ChCakeImg} alt="description" className="ItemCard__image" />
+      <img
+        src={object.image_url}
+        alt="description"
+        className="ItemCard__image"
+      />
 
       <h2 className="ItemCard__name">{object.cakeName}</h2>
       <div className="ItemCard__button--box">

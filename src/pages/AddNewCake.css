@@ -17,3 +17,9 @@
   letter-spacing: 0.1rem;
   color: whitesmoke;
 }
+
+.AddNewCake__form--imgPreview {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+}
