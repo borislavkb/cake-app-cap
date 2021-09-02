@@ -61,3 +61,15 @@
   color: var(--color-icons);
   margin: 0.5rem;
 }
+
+.shadow {
+  -moz-box-shadow: 3px 3px 5px 6px rgb(219, 98, 98);
+  -webkit-box-shadow: 3px 3px 5px 6px rgb(170, 88, 88);
+  box-shadow: 3px 3px 5px 6px rgb(190, 134, 134);
+}
+
+.one-edge-shadow {
+  -webkit-box-shadow: 0 8px 6px -6px black;
+  -moz-box-shadow: 0 8px 6px -6px black;
+  box-shadow: 0 8px 6px -6px black;
+}
