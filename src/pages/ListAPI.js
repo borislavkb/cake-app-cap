@@ -14,7 +14,6 @@ export default function ListAPI({ object }) {
       .then((res) => res.json())
       .then((data) => {
         setDataAPI(data.hits);
-        setCakes(data.hits);
       })
       .catch((error) => {
         console.log(error);
