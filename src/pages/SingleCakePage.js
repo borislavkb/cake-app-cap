@@ -1,7 +1,6 @@
 import "./SingleCakePage.css";
 import { useParams } from "react-router-dom";
 import chocolateCake from "../images/chocolate.png";
-import ReactStars from "react-rating-stars-component";
 
 export default function SingleCakePage() {
   const { id } = useParams();
@@ -19,14 +18,6 @@ export default function SingleCakePage() {
               className="SinglePage__cake--image"
               src={chocolateCake}
               alt=""
-            />
-            <ReactStars
-              className="SinglePage__cake--rating"
-              count={5}
-              onChange
-              size={24}
-              activeColor="#ffd700"
-              value={3}
             />
 
             <h3 className="SinglePage__cake--ingredients">Ingredients:</h3>
