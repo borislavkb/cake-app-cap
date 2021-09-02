@@ -14,8 +14,15 @@
 .Recipe-api__card--image {
   height: 5rem;
   width: 5rem;
+  border-radius: 50%;
 }
 
 .Recipe-api__card--title {
   color: var(--color-icons);
+}
+
+.one-edge-shadow {
+  -webkit-box-shadow: 0 8px 6px -6px black;
+  -moz-box-shadow: 0 8px 6px -6px black;
+  box-shadow: 0 8px 6px -6px black;
 }
