@@ -50,30 +50,7 @@ export default function AddNewCake({ listOfCakes, handleAddNewRecipe }) {
       isFav: false,
       image_url: image.url,
     };
-    // const uploadImage = async (e) => {
-    //   const files = e.target.files;
-    //   const data = new FormData();
-    //   data.append("file", files[0]);
 
-    //   const uploadImage = async (e) => {
-    //     const files = e.target.files;
-    //     const formData = new FormData();
-    //     formData.append("file", files[0]);
-    //     formData.append("upload_preset", "v6aqpvob");
-
-    //     const res = await fetch(
-    //       "https://api.cloudinary.com/v1_1/cakesapp/image/upload",
-    //       { method: "POST", body: formData }
-    //     );
-    //     const file = await res.json();
-    //     console.log(file);
-    //     setImageSelected(file.secure_url);
-    //     setIsLoading(false);
-    //   };
-
-    // const recipesArray = JSON.parse(localStorage.getItem("recipesArray")) || [];
-    // recipesArray.push(recipeData);
-    // localStorage.setItem("recipesArray", JSON.stringify(recipesArray));
     handleAddNewRecipe(recipeData);
     successToast();
 
