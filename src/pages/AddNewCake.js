@@ -1,9 +1,10 @@
 import "./AddNewCake.css";
 import { v4 as uuidv4 } from "uuid";
 import { toast } from "react-toastify";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function AddNewCake() {
+
+export default function AddNewCake({ listOfCakes, handleAddNewRecipe }) {
   const successToast = () => {
     toast("Successfully saved!", {
       className: "custom-toast ",
@@ -12,6 +13,10 @@ export default function AddNewCake() {
     });
   };
 
+
+  useEffect(() => {
+    localStorage.setItem("recipesArray", JSON.stringify(listOfCakes));
+  }, [listOfCakes]);
   const [image, setImage] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -67,14 +72,17 @@ export default function AddNewCake() {
     //     setIsLoading(false);
     //   };
 
-    const recipesArray = JSON.parse(localStorage.getItem("recipesArray")) || [];
-    recipesArray.push(recipeData);
-    localStorage.setItem("recipesArray", JSON.stringify(recipesArray));
+    // const recipesArray = JSON.parse(localStorage.getItem("recipesArray")) || [];
+    // recipesArray.push(recipeData);
+    // localStorage.setItem("recipesArray", JSON.stringify(recipesArray));
+    handleAddNewRecipe(recipeData);
     successToast();
 
     form.reset();
   }
 
+
+ 
   return (
     <form className="AddNewCake__form" onSubmit={handleSubmit}>
       <i className="input-file--icon"></i>

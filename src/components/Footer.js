@@ -4,6 +4,7 @@ import { BsPlusSquare } from "react-icons/bs";
 import { GiCakeSlice } from "react-icons/gi";
 import { IconContext } from "react-icons";
 import { FaStoreAlt } from "react-icons/fa";
+import { MdFavoriteBorder } from "react-icons/md";
 
 export default function Footer() {
   return (
@@ -18,6 +19,9 @@ export default function Footer() {
           </NavLink>
           <NavLink className="Footer__navigation--item" to="/API">
             <FaStoreAlt />
+          </NavLink>
+          <NavLink className="Footer__navigation--item" to="/favs">
+            <MdFavoriteBorder />
           </NavLink>
         </nav>
       </footer>
