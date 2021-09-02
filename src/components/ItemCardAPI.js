@@ -1,7 +1,9 @@
 import { RiFilePaper2Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
-export default function ItemCardAPI({ props, id }) {
+export default function ItemCardAPI({ props }) {
+  let cakeID = props.recipe.uri.slice(-39);
+  console.log(cakeID);
   return (
     <li className="Recipe-api__card" key={props.id}>
       <img
@@ -11,9 +13,9 @@ export default function ItemCardAPI({ props, id }) {
       />
       <div className="Recipe-api__card--body">
         <h2 className="Recipe-api__card--title">{props.recipe.label}</h2>
-        <a href={props.recipe.url}>
+        <Link to={`cakes/${cakeID}`}>
           <RiFilePaper2Line className="Icon" />
-        </a>
+        </Link>
       </div>
     </li>
   );
