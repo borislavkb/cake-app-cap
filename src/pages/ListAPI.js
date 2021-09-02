@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import ItemCardAPI from "../components/ItemCardAPI";
 
 export default function ListAPI({ object }) {
-  const [cakes, setCakes] = useState([]);
+  const [dataAPI, setDataAPI] = useState([]);
 
   const API_ID = process.env.REACT_APP_CAKE_API_ID;
   const API_KEY = process.env.REACT_APP_CAKE_API_KEY;
@@ -13,8 +13,7 @@ export default function ListAPI({ object }) {
     fetch(URL)
       .then((res) => res.json())
       .then((data) => {
-        setCakes(data.hits);
-        console.log(data.hits);
+        setDataAPI(data.hits);
       })
       .catch((error) => {
         console.log(error);
@@ -22,7 +21,7 @@ export default function ListAPI({ object }) {
   }, []);
 
   function renderRecipes() {
-    return cakes.map((cake) => {
+    return dataAPI.map((cake) => {
       return <ItemCardAPI key={cake.id} props={cake} />;
     });
   }

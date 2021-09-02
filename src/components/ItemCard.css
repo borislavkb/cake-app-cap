@@ -16,7 +16,11 @@
 }
 
 .ItemCard__image {
+  margin-top: 1rem;
   height: 5rem;
+  border-bottom-left-radius: 40%;
+  border-top-right-radius: 40%;
+  border: 8px double var(--color-button-text);
 }
 
 .ItemCard__name {
@@ -29,6 +33,12 @@
   border: 2px hidden;
   border-radius: 25px;
   padding: 0.25rem 0.2rem;
+  margin: 0.5rem;
+}
+
+.ItemCard__button:hover {
+  background-color: salmon;
+  color: black;
 }
 
 .ItemCard__button--box {
@@ -41,11 +51,6 @@
   align-self: center;
 }
 
-.Icon {
-  color: var(--color-icons);
-  font-size: 1.6rem;
-}
-
 .ItemCard__button--fav {
   background: none;
   border: none;
@@ -54,4 +59,17 @@
 .Icon {
   font-size: 2rem;
   color: var(--color-icons);
+  margin: 0.5rem;
+}
+
+.shadow {
+  -moz-box-shadow: 3px 3px 5px 6px rgb(219, 98, 98);
+  -webkit-box-shadow: 3px 3px 5px 6px rgb(170, 88, 88);
+  box-shadow: 3px 3px 5px 6px rgb(190, 134, 134);
+}
+
+.one-edge-shadow {
+  -webkit-box-shadow: 0 8px 6px -6px black;
+  -moz-box-shadow: 0 8px 6px -6px black;
+  box-shadow: 0 8px 6px -6px black;
 }

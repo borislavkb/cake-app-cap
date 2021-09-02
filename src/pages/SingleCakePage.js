@@ -14,11 +14,7 @@ export default function SingleCakePage() {
         <main className="SinglePage__content">
           <div className="SinglePage__content--box">
             <h2 className="SinglePage__cake--title relief">{cake.cakeName}</h2>
-            <img
-              className="SinglePage__cake--image"
-              src={chocolateCake}
-              alt=""
-            />
+            <img src={cake.image_url} alt="" />
 
             <h3 className="SinglePage__cake--ingredients">Ingredients:</h3>
             <p className="SinglePage__cake--text">{cake.cakeIngredients}</p>

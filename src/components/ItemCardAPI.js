@@ -1,3 +1,4 @@
+import "./ItemCardAPI.css";
 import { RiFilePaper2Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
 

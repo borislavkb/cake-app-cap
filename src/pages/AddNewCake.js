@@ -1,9 +1,9 @@
 import "./AddNewCake.css";
 import { v4 as uuidv4 } from "uuid";
 import { toast } from "react-toastify";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function AddNewCake() {
+export default function AddNewCake({ listOfCakes, handleAddNewRecipe }) {
   const successToast = () => {
     toast("Successfully saved!", {
       className: "custom-toast ",
@@ -12,7 +12,10 @@ export default function AddNewCake() {
     });
   };
 
-  const [image, setImage] = useState("");
+  useEffect(() => {
+    localStorage.setItem("recipesArray", JSON.stringify(listOfCakes));
+  }, [listOfCakes]);
+  const [image, setImage] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   const uploadImage = async (event) => {
@@ -22,13 +25,13 @@ export default function AddNewCake() {
     data.append("upload_preset", "v6aqpvob");
     setIsLoading(true);
 
-    const response = await fetch(
+    const res = await fetch(
       "https://api.cloudinary.com/v1_1/cakesapp/image/upload",
       { method: "POST", body: data }
     );
-    const file = await response.json();
-    console.log(file);
-    return file;
+    const file = await res.json();
+
+    setImage(file);
   };
 
   function handleSubmit(event) {
@@ -45,7 +48,7 @@ export default function AddNewCake() {
       cakeRecipe,
       rating: 0,
       isFav: false,
-      // image: https://res.cloudinary.com/cakesapp/image/upload/v1630419977/orl58ycl5zgtbh7fbbyx.jpg
+      image_url: image.url,
     };
     // const uploadImage = async (e) => {
     //   const files = e.target.files;
@@ -68,9 +71,10 @@ export default function AddNewCake() {
     //     setIsLoading(false);
     //   };
 
-    const recipesArray = JSON.parse(localStorage.getItem("recipesArray")) || [];
-    recipesArray.push(recipeData);
-    localStorage.setItem("recipesArray", JSON.stringify(recipesArray));
+    // const recipesArray = JSON.parse(localStorage.getItem("recipesArray")) || [];
+    // recipesArray.push(recipeData);
+    // localStorage.setItem("recipesArray", JSON.stringify(recipesArray));
+    handleAddNewRecipe(recipeData);
     successToast();
 
     form.reset();
@@ -86,6 +90,11 @@ export default function AddNewCake() {
         name="cakeImage"
         accept="image/png, image/jpeg"
         onChange={uploadImage}
+      />
+      <img
+        src={image.url}
+        alt="file preview"
+        className="AddNewCake__form--imgPreview"
       />
       <input
         type="text"

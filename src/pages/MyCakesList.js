@@ -1,44 +1,18 @@
 import "./MyCakesList.css";
+import { useState, useEffect } from "react";
 
-import { useEffect, useState } from "react";
 import ItemCard from "../components/ItemCard";
 
-export default function MyCakesList() {
-  const [listOfCakes, setListOfCakes] = useState(() => {
-    const recipesLS = JSON.parse(localStorage.getItem("recipesArray"));
-    return recipesLS || [];
-  });
-  // eslint-disable-next-line no-unused-vars
-  const [listOfFavs, setListOfFavs] = useState([]);
-
-  useEffect(() => {
-    localStorage.setItem("recipesArray", JSON.stringify(listOfCakes));
-  }, [listOfCakes]);
-
-  function handleDeleteItemFromList(id) {
-    const updatedList = listOfCakes.filter((cake) => cake.id !== id);
-    setListOfCakes(updatedList);
-  }
-
-  function handleToggleFavouriteCake(id) {
-    const listOfFavouriteCakes = listOfCakes.map((cake) => {
-      if (cake.id === id) {
-        return {
-          ...cake,
-          isFav: !cake.isFav,
-        };
-      }
-      return cake;
-    });
-
-    setListOfFavs(listOfFavouriteCakes);
-  }
-
+export default function MyCakesList({
+  listOfCakes,
+  handleDeleteItemFromList,
+  handleToggleFavouriteCake,
+}) {
   function renderListOfCakeRecipes() {
     if (listOfCakes.length === 0) {
       return <p>There are no recipes currently stored. Add your recipe ! </p>;
     } else {
-      return listOfCakes?.map((cake) => {
+      return listOfCakes?.map((cake, index) => {
         return (
           <ItemCard
             object={cake}
