@@ -14,6 +14,8 @@
 .Recipe-api__card--image {
   height: 5rem;
   width: 5rem;
+  margin-top: 1rem;
+  border-radius: 40%;
 }
 
 .Recipe-api__card--title {
