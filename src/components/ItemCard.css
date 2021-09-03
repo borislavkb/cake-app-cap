@@ -45,6 +45,10 @@
   display: flex;
   align-items: center;
   gap: 2rem;
+  background-color: var(--color-icons);
+  color: var(--color-text);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
 .ItemCard__link {
@@ -59,6 +63,12 @@
 .Icon {
   font-size: 2rem;
   color: var(--color-icons);
+  margin: 0.5rem;
+}
+
+.Icon_card {
+  font-size: 2rem;
+  color: var(--color-background);
   margin: 0.5rem;
 }
 

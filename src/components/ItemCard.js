@@ -31,19 +31,19 @@ export default function ItemCard({ object, paramsId, onDelete, onToggleFav }) {
         <button className="ItemCard__button--fav">
           {object.isFav ? (
             <IoHeart
-              className="Icon"
+              className="Icon_card"
               onClick={() => handleToggleFavouriteCake(object.id)}
             />
           ) : (
             <IoHeartOutline
-              className="Icon"
+              className="Icon_card"
               onClick={() => handleToggleFavouriteCake(object.id)}
             />
           )}
         </button>
 
         <Link to={`/cakes/${object.id}`}>
-          <RiFilePaper2Line className="Icon" />
+          <RiFilePaper2Line className="Icon_card" />
         </Link>
       </div>
     </li>
