@@ -18,9 +18,7 @@
 .ItemCard__image {
   margin-top: 1rem;
   height: 5rem;
-  border-bottom-left-radius: 40%;
-  border-top-right-radius: 40%;
-  border: 8px double var(--color-button-text);
+  border-radius: 40%;
 }
 
 .ItemCard__name {

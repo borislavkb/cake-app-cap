@@ -10,6 +10,7 @@ import { ToastContainer, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ListAPI from "./pages/ListAPI";
 import { useState, useEffect } from "react";
+import ListAPISinglePage from "../src/pages/SinglePageAPI";
 
 function App() {
   const [listOfCakes, setListOfCakes] = useState(
@@ -59,9 +60,11 @@ function App() {
   return (
     <div className="App">
       <Header />
-
       <Switch>
-        <Route path="/cakes/:id">
+        <Route path="/cakes/:cakeID">
+          <ListAPISinglePage />
+        </Route>
+        <Route path="/owncakes/:id">
           <SingleCakePage />
         </Route>
         <Route path="/favs">
