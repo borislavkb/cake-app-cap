@@ -17,10 +17,7 @@
 
 .ItemCard__image {
   margin-top: 1rem;
-  height: 10rem;
-  border-bottom-left-radius: 40%;
-  border-top-right-radius: 40%;
-  border: 8px double var(--color-button-text);
+  height: 5rem;
 }
 
 .ItemCard__name {
@@ -68,8 +65,8 @@
   box-shadow: 3px 3px 5px 6px rgb(190, 134, 134);
 }
 
-.one-edge-shadow {
+/* .one-edge-shadow {
   -webkit-box-shadow: 0 8px 6px -6px black;
   -moz-box-shadow: 0 8px 6px -6px black;
   box-shadow: 0 8px 6px -6px black;
-}
+} */

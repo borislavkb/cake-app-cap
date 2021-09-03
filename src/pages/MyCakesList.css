@@ -7,6 +7,7 @@
 
 .App-main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   overflow-y: scroll;
   background-color: var(--color-background);
