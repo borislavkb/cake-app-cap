@@ -23,6 +23,8 @@
 
 .ItemCard__name {
   color: var(--color-icons);
+  width: 10rem;
+  word-wrap: break-word;
 }
 
 .ItemCard__button {
