@@ -1,6 +1,6 @@
 import "./SingleCakePage.css";
 import { useParams } from "react-router-dom";
-import chocolateCake from "../images/chocolate.png";
+import defaultImage from "../images/chocolate.png";
 
 export default function SingleCakePage() {
   const { id } = useParams();
@@ -15,7 +15,7 @@ export default function SingleCakePage() {
           <div>
             <h2 className="SinglePage__cake--title">{cake.cakeName}</h2>
             <img
-              src={cake.image_url}
+              src={!cake.image_url ? defaultImage : cake.image_url}
               alt=""
               className="SinglePage__cake--image"
             />
