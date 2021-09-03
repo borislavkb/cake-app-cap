@@ -13,10 +13,12 @@ export default function ListAPISinglePage() {
 
   useEffect(() => {
     const url = `https://api.edamam.com/api/recipes/v2/${cakeID}?type=public&app_id=0cab5025&app_key=39663efb82058e801b156ea8aee14b54`;
+    setIsLoading(true);
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
         setRecipeAPI(data);
+        setIsLoading(false);
         console.log(data);
       })
       .catch((error) => {
@@ -28,6 +30,8 @@ export default function ListAPISinglePage() {
     if (isLoading || recipeAPI === null) {
       return "Loading...";
     }
+
+    const { data } = recipeAPI;
 
     return (
       <main className="SinglePage__content">
