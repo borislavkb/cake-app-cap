@@ -13,14 +13,12 @@ export default function ItemCard({ object, paramsId, onDelete, onToggleFav }) {
   }
 
   return (
-
     <li className="ItemCard" key={object.id}>
       <img
         src={object.image_url}
         alt="description"
         className="ItemCard__image"
       />
-
 
       <h2 className="ItemCard__name">{object.cakeName}</h2>
       <div className="ItemCard__button--box">
@@ -44,7 +42,7 @@ export default function ItemCard({ object, paramsId, onDelete, onToggleFav }) {
           )}
         </button>
 
-        <Link to={`/cakes/${object.id}`}>
+        <Link to={`/owncakes/${object.id}`}>
           <RiFilePaper2Line className="Icon" />
         </Link>
       </div>

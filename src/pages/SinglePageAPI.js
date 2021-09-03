@@ -31,17 +31,20 @@ export default function ListAPISinglePage() {
       return "Loading...";
     }
 
-    const { data } = recipeAPI;
-
     return (
-      <main className="SinglePage__content">
-        <div className="SinglePage__content--box">
-          <h2 className="SinglePage__cake--title relief">{recipeAPI.label}</h2>
-          <img className="SinglePage__cake--image" src={chocolateCake} alt="" />
+      <main className="SinglePageAPI__content">
+        <div className="SinglePageAPI__content--box">
+          <h2 className="SinglePageAPI__cake--title relief">
+            {recipeAPI?.recipe.label}
+          </h2>
+          <img
+            className="SinglePageAPI__cake--image"
+            src={recipeAPI?.recipe.image}
+            alt="current recipe"
+          />
+          <br></br>
 
-          <h3 className="SinglePage__cake--ingredients">Ingredients:</h3>
-          <p className="SinglePage__cake--text">{recipeAPI.ingredients}</p>
-          <h3 className="SinglePage__cake--recipe">Recipe: </h3>
+          <a href={recipeAPI?.recipe.url}>External Link</a>
         </div>
       </main>
     );

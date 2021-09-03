@@ -6,7 +6,7 @@ export default function ItemCardAPI({ props, id }) {
   let cakeID = props.recipe.uri.slice(-39);
   console.log(cakeID);
   return (
-    <li className="Recipe-api__card" key={props.id}>
+    <li className="Recipe-api__card one-edge-shadow" key={props.id}>
       <img
         src={props.recipe.image}
         alt={props.recipe.label}

@@ -1,20 +1,19 @@
-.SinglePage__content {
+.SinglePageAPI__content {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   overflow-y: scroll;
   background-color: var(--color-background);
+  color: var(--color-text);
 }
 
-.SinglePage__cake--image  {
-  height: 7rem;
-  width: 7rem;
+.SinglePageAPI__cake--image {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 40%;
 }
 
-/*  Remove the content
-img {
-  height: 7rem;
-  width: 7rem;
+.SinglePageAPI__link {
+  color: var(--color-text);
 }
-*/
