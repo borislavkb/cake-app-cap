@@ -16,3 +16,7 @@
 .App-main a {
   text-decoration: none;
 }
+
+.App-main__message {
+  color: var(--color-text);
+}
