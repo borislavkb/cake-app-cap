@@ -1,0 +1,18 @@
+.SinglePage__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: scroll;
+  background-color: var(--color-background);
+}
+
+.SinglePage__cake--image  {
+  height: 7rem;
+  width: 7rem;
+}
+
+img {
+  height: 7rem;
+  width: 7rem;
+}

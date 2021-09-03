@@ -1,3 +1,4 @@
+import "./SinglePageAPI.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import chocolateCake from "../images/chocolate.png";
