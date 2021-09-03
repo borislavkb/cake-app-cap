@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import {
   IoHeart,
   IoHeartOutline,
-  IoTrashOutline,
+  IoTrashBinOutline,
   IoBookOutline,
 } from "react-icons/io5";
 
@@ -26,13 +26,13 @@ export default function ItemCard({ object, onDelete, onToggleFav }) {
 
       <h2 className="ItemCard__name">{object.cakeName}</h2>
       <div className="ItemCard__button--box">
-        <button
-          className="ItemCard__button--delete"
+        <icon
+          className="ItemCard__button left"
           onClick={() => handleDeleteItemFromList(object.id)}
         >
-          <IoTrashOutline calssName="Icon_card" />
-        </button>
-        <button className="ItemCard__button--fav">
+          <IoTrashBinOutline className="Icon_card" />
+        </icon>
+        <icon className="ItemCard__button">
           {object.isFav ? (
             <IoHeart
               className="Icon_card"
@@ -44,9 +44,9 @@ export default function ItemCard({ object, onDelete, onToggleFav }) {
               onClick={() => handleToggleFavouriteCake(object.id)}
             />
           )}
-        </button>
+        </icon>
 
-        <Link to={`/cakes/${object.id}`}>
+        <Link to={`/cakes/${object.id}`} className="ItemCard__button right">
           <IoBookOutline className="Icon_card" />
         </Link>
       </div>
