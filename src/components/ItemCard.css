@@ -27,13 +27,9 @@
   word-wrap: break-word;
 }
 
-.ItemCard__button {
+.ItemCard__button--delete {
   background-color: var(--color-icons);
-  color: var(--color-button-text);
-  border: 2px hidden;
-  border-radius: 25px;
-  padding: 0.25rem 0.2rem;
-  margin: 0.5rem;
+  border: none;
 }
 
 .ItemCard__button:hover {
@@ -56,7 +52,7 @@
 }
 
 .ItemCard__button--fav {
-  background: none;
+  background-color: var(--color-icons);
   border: none;
 }
 
@@ -68,8 +64,17 @@
 
 .Icon_card {
   font-size: 2rem;
-  color: var(--color-background);
+  color: var(--color-items-background);
   margin: 0.5rem;
+}
+
+.Icon_card--delete {
+  font-size: 5rem;
+  color: var(--color-items-background);
+  margin: 0.5rem;
+}
+
+.Icon_card:hover {
 }
 
 .shadow {

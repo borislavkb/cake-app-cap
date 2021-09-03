@@ -1,9 +1,13 @@
 import "./ItemCard.css";
-import { RiFilePaper2Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import { IoHeart, IoHeartOutline } from "react-icons/io5";
+import {
+  IoHeart,
+  IoHeartOutline,
+  IoTrashOutline,
+  IoBookOutline,
+} from "react-icons/io5";
 
-export default function ItemCard({ object, paramsId, onDelete, onToggleFav }) {
+export default function ItemCard({ object, onDelete, onToggleFav }) {
   function handleDeleteItemFromList() {
     onDelete(object);
   }
@@ -23,10 +27,10 @@ export default function ItemCard({ object, paramsId, onDelete, onToggleFav }) {
       <h2 className="ItemCard__name">{object.cakeName}</h2>
       <div className="ItemCard__button--box">
         <button
-          className="ItemCard__button delete"
+          className="ItemCard__button--delete"
           onClick={() => handleDeleteItemFromList(object.id)}
         >
-          X
+          <IoTrashOutline calssName="Icon_card" />
         </button>
         <button className="ItemCard__button--fav">
           {object.isFav ? (
@@ -43,7 +47,7 @@ export default function ItemCard({ object, paramsId, onDelete, onToggleFav }) {
         </button>
 
         <Link to={`/cakes/${object.id}`}>
-          <RiFilePaper2Line className="Icon_card" />
+          <IoBookOutline className="Icon_card" />
         </Link>
       </div>
     </li>
