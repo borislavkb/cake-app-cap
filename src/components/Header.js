@@ -6,19 +6,19 @@ export default function Header() {
     <header className="Header">
       <Switch>
         <Route path="/API">
-          <h1 className="Header__title">Random recipes from the Internet !</h1>
+          <h1 className="Header__title"> External recipes!</h1>
         </Route>
         <Route path="/cakes/:id">
-          <h1 className="Header__title">Single MyCakes</h1>
+          <h1 className="Header__title">Single cake recipe</h1>
         </Route>
         <Route path="/favs">
           <h1 className="Header__title">Favourites</h1>
         </Route>
         <Route path="/add">
-          <h1 className="Header__title">Insert a new cake</h1>
+          <h1 className="Header__title">Add a new recipe</h1>
         </Route>
         <Route exact path="/">
-          <h1 className="Header__title"> Catalogue</h1>
+          <h1 className="Header__title"> My recipes</h1>
         </Route>
       </Switch>
     </header>
