@@ -17,3 +17,20 @@
 .SinglePageAPI__link {
   color: var(--color-text);
 }
+
+a:link {
+  text-decoration: none;
+  color: var(--color-icons);
+}
+
+a:visited {
+  color: var(--color-icons);
+}
+
+a:hover {
+  color: red;
+}
+
+a:active {
+  color: blue;
+}
