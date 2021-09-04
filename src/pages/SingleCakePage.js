@@ -7,7 +7,7 @@ export default function SingleCakePage() {
   const { id } = useParams();
 
   let history = useHistory();
-  function returnToHome() {
+  function returnHome() {
     return history.push("/");
   }
 
@@ -32,7 +32,7 @@ export default function SingleCakePage() {
             <button
               type="button"
               className="SinglePage_cake--button"
-              onClick={returnToHome}
+              onClick={returnHome}
             >
               Return home
             </button>
