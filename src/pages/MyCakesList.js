@@ -1,5 +1,4 @@
 import "./MyCakesList.css";
-import { useState, useEffect } from "react";
 
 import ItemCard from "../components/ItemCard";
 
