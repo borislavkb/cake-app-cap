@@ -47,7 +47,7 @@ export default function ItemCard({ object, onDelete, onToggleFav }) {
           )}
         </icon>
 
-        <Link to={`/cakes/${object.id}`} className="ItemCard__button right">
+        <Link to={`/owncakes/${object.id}`} className="ItemCard__button right">
           <IoBookOutline className="Icon_card" />
         </Link>
       </div>

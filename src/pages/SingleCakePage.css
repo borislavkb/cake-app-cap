@@ -18,6 +18,8 @@
 .SinglePage__cake--image {
   height: 7rem;
   width: 7rem;
+  border-radius: 15px;
+  margin-top: 0.5rem;
 }
 
 .SinglePage__cake--title {
