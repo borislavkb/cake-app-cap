@@ -2,7 +2,7 @@ import "./SinglePageAPI.css";
 import { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router";
 
-import chocolateCake from "../images/chocolate.png";
+import defaultImage from "../images/chocolate.png";
 
 //https://api.edamam.com/api/recipes/v2/{id}
 
@@ -42,7 +42,9 @@ export default function ListAPISinglePage() {
         <div className="SinglePageAPI__content--box">
           <img
             className="SinglePageAPI__cake--image"
-            src={recipeAPI?.recipe.image}
+            src={
+              !recipeAPI?.recipe.image ? defaultImage : recipeAPI?.recipe.image
+            }
             alt="current recipe"
           />
           <h2 className="SinglePageAPI__cake--title relief">

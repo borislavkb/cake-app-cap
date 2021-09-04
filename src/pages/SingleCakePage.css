@@ -30,7 +30,6 @@
   color: var(--color-text);
 }
 
-
 .SinglePage_cake--button {
   background-color: var(--color-text);
   border: none white;
@@ -41,6 +40,7 @@
   letter-spacing: 0.1rem;
   color: whitesmoke;
   margin-bottom: 1rem;
+}
 
 hr {
   padding: 0;
@@ -57,5 +57,4 @@ hr:after {
   font-size: 1.5em;
   padding: 0 0.25em;
   background: var(--color-background);
-
 }
