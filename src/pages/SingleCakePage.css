@@ -18,6 +18,8 @@
 .SinglePage__cake--image {
   height: 7rem;
   width: 7rem;
+  border-radius: 15px;
+  margin-top: 0.5rem;
 }
 
 .SinglePage__cake--title {
@@ -26,4 +28,21 @@
 
 .SinglePage__cake--text {
   color: var(--color-text);
+}
+
+hr {
+  padding: 0;
+  border: none;
+  border-top: medium double var(--color-icons);
+  color: var(--color-icons);
+  text-align: center;
+}
+hr:after {
+  content: "§";
+  display: inline-block;
+  position: relative;
+  top: -0.7em;
+  font-size: 1.5em;
+  padding: 0 0.25em;
+  background: var(--color-background);
 }

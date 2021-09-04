@@ -34,15 +34,15 @@ export default function ListAPISinglePage() {
     return (
       <main className="SinglePageAPI__content">
         <div className="SinglePageAPI__content--box">
-          <h2 className="SinglePageAPI__cake--title relief">
-            {recipeAPI?.recipe.label}
-          </h2>
           <img
             className="SinglePageAPI__cake--image"
             src={recipeAPI?.recipe.image}
             alt="current recipe"
           />
-          <br></br>
+          <h2 className="SinglePageAPI__cake--title relief">
+            {recipeAPI?.recipe.label}
+          </h2>
+          <hr></hr>
 
           <a href={recipeAPI?.recipe.url} className="SinglePageAPI__link">
             Link to the external source of the recipe
