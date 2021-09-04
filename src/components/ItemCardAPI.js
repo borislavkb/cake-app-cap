@@ -10,7 +10,7 @@ export default function ItemCardAPI({ props, id }) {
       <img
         src={props.recipe.image}
         alt={props.recipe.label}
-        className="Recipe-api__card--image"
+        className="Recipe-api__card--image grow"
       />
       <h2 className="Recipe-api__card--title">{props.recipe.label}</h2>
       <div className="Recipe-api__card--body">
