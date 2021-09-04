@@ -47,6 +47,7 @@ textarea {
   cursor: pointer;
   background-color: var(--color-items-background);
   border-radius: 15px;
+  word-wrap: break-word;
 }
 
 img {
