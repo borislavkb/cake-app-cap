@@ -30,6 +30,18 @@
   color: var(--color-text);
 }
 
+
+.SinglePage_cake--button {
+  background-color: var(--color-text);
+  border: none white;
+  padding-inline: 1em;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
+  color: whitesmoke;
+  margin-bottom: 1rem;
+
 hr {
   padding: 0;
   border: none;
@@ -45,4 +57,5 @@ hr:after {
   font-size: 1.5em;
   padding: 0 0.25em;
   background: var(--color-background);
+
 }
