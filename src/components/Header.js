@@ -8,8 +8,11 @@ export default function Header() {
         <Route path="/API">
           <h1 className="Header__title"> External recipes!</h1>
         </Route>
-        <Route path="/cakes/:id">
-          <h1 className="Header__title">Single cake recipe</h1>
+        <Route path="/cakes/:cakeID">
+          <h1 className="Header__title">Single cake web recipe</h1>
+        </Route>
+        <Route path="/owncakes/:id">
+          <h1 className="Header_title">Single cake own recipe</h1>
         </Route>
         <Route path="/favs">
           <h1 className="Header__title">Favourites</h1>

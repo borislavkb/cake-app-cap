@@ -48,7 +48,10 @@ export default function ListAPISinglePage() {
           <h2 className="SinglePageAPI__cake--title relief">
             {recipeAPI?.recipe.label}
           </h2>
+
           <br></br>
+
+          <hr></hr>
 
           <a href={recipeAPI?.recipe.url} className="SinglePageAPI__link">
             Link to the external source of the recipe
