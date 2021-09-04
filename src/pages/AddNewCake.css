@@ -5,6 +5,8 @@
   justify-content: center;
   gap: 1rem;
   background: var(--color-background);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .AddNewCake__btn-submit {
@@ -22,4 +24,34 @@
   height: 10rem;
   width: 10rem;
   border-radius: 50%;
+}
+
+.input[type="text"],
+textarea {
+  text-align: center;
+  border: #000;
+  padding: 0.5rem;
+  font-size: 1em;
+  width: auto;
+  background-color: var(--color-items-background);
+  border-radius: 15px;
+  font-family: rochester;
+}
+
+.input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  border: 1px solid var(--color-items-background);
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  background-color: var(--color-items-background);
+  border-radius: 15px;
+}
+
+img {
+  background-color: var(--color-items-background);
+  font: 40px Impact;
 }

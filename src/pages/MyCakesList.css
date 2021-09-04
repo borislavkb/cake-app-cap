@@ -19,4 +19,5 @@
 
 .App-main__message {
   color: var(--color-text);
+  margin: 5rem;
 }
