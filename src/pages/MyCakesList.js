@@ -10,7 +10,11 @@ export default function MyCakesList({
 }) {
   function renderListOfCakeRecipes() {
     if (listOfCakes.length === 0) {
-      return <p>There are no recipes currently stored. Add your recipe ! </p>;
+      return (
+        <h3 className="App-main__message">
+          There are no recipes currently stored. Add your recipe !{" "}
+        </h3>
+      );
     } else {
       return listOfCakes?.map((cake, index) => {
         return (

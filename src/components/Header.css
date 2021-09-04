@@ -1,6 +1,6 @@
 .Header {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   width: 100%;
   background-color: var(--color-background);
   border-bottom: 5px solid var(--color-icons);

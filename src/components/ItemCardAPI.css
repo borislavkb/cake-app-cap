@@ -20,6 +20,8 @@
 
 .Recipe-api__card--title {
   color: var(--color-icons);
+  width: 10rem;
+  word-wrap: break-word;
 }
 .Icon {
   font-size: 2rem;
@@ -36,4 +38,11 @@
   -webkit-box-shadow: 0 8px 6px -6px black;
   -moz-box-shadow: 0 8px 6px -6px black;
   box-shadow: 0 8px 6px -6px black;
+}
+
+.grow {
+  transition: all 0.5s ease-in-out;
+}
+.grow:hover {
+  transform: scale(1.2);
 }

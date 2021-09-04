@@ -7,8 +7,10 @@ export default function Favs({
   handleToggleFavouriteCake,
 }) {
   function renderListOfFavs() {
-    if (listOfFavs === null) {
-      return <h3>There are no saved favourite items! </h3>;
+    if (listOfFavs.length === 0) {
+      return (
+        <h3 className="Message__text">There are no saved favourite items! </h3>
+      );
     } else {
       return listOfFavs.map((recipe) => {
         if (recipe.isFav) {

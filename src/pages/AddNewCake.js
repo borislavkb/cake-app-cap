@@ -2,7 +2,7 @@ import "./AddNewCake.css";
 import { v4 as uuidv4 } from "uuid";
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
-
+import defaultImage from "../images/chocolate.png";
 
 export default function AddNewCake({ listOfCakes, handleAddNewRecipe }) {
   const successToast = () => {
@@ -12,7 +12,6 @@ export default function AddNewCake({ listOfCakes, handleAddNewRecipe }) {
       position: toast.POSITION.TOP_CENTER,
     });
   };
-
 
   useEffect(() => {
     localStorage.setItem("recipesArray", JSON.stringify(listOfCakes));
@@ -81,21 +80,10 @@ export default function AddNewCake({ listOfCakes, handleAddNewRecipe }) {
     form.reset();
   }
 
-
- 
   return (
     <form className="AddNewCake__form" onSubmit={handleSubmit}>
-      <i className="input-file--icon"></i>
-
-      <input
-        type="file"
-        id="cakeImage"
-        name="cakeImage"
-        accept="image/png, image/jpeg"
-        onChange={uploadImage}
-      />
       <img
-        src={image.url}
+        src={!image.url ? defaultImage : image.url}
         alt="file preview"
         className="AddNewCake__form--imgPreview"
       />
@@ -120,6 +108,14 @@ export default function AddNewCake({ listOfCakes, handleAddNewRecipe }) {
         cols="40"
         placeholder="Insert a recipe"
       ></textarea>
+      <input
+        type="file"
+        id="cakeImage"
+        name="cakeImage"
+        accept="image/png, image/jpeg"
+        onChange={uploadImage}
+        className="custom-file-upload"
+      />
 
       <input type="submit" value="Submit" className="AddNewCake__btn-submit" />
     </form>

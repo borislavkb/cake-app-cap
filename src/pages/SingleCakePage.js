@@ -19,10 +19,10 @@ export default function SingleCakePage() {
               alt=""
               className="SinglePage__cake--image"
             />
-            <h3>Ingredients:</h3>
-            <p>{cake.cakeIngredients}</p>
-            <h3>Recipe: </h3>
-            <p>{cake.cakeRecipe}</p>
+            <h3 className="SinglePage__cake--title">Ingredients:</h3>
+            <p className="SinglePage__cake--text">{cake.cakeIngredients}</p>
+            <h3 className="SinglePage__cake--title">Recipe: </h3>
+            <p className="SinglePage__cake--text">{cake.cakeRecipe}</p>
           </div>
         </main>
       ));

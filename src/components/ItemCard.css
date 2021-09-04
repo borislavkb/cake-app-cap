@@ -21,28 +21,39 @@
   border-radius: 40%;
 }
 
+.ItemCard__button--box {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background-color: var(--color-icons);
+  color: var(--color-text);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
 .ItemCard__name {
   color: var(--color-icons);
+  width: 10rem;
+  word-wrap: break-word;
 }
 
 .ItemCard__button {
   background-color: var(--color-icons);
-  color: var(--color-button-text);
-  border: 2px hidden;
-  border-radius: 25px;
-  padding: 0.25rem 0.2rem;
-  margin: 0.5rem;
+  border: none;
+}
+
+.left {
+  border-bottom-left-radius: 15px;
+}
+
+.right {
+  border-bottom-right-radius: 15px;
 }
 
 .ItemCard__button:hover {
   background-color: salmon;
   color: black;
-}
-
-.ItemCard__button--box {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
+  pointer-events: visible;
+  cursor: pointer;
 }
 
 .ItemCard__link {
@@ -50,13 +61,25 @@
 }
 
 .ItemCard__button--fav {
-  background: none;
+  background-color: var(--color-icons);
   border: none;
 }
 
 .Icon {
   font-size: 2rem;
   color: var(--color-icons);
+  margin: 0.5rem;
+}
+
+.Icon_card {
+  font-size: 2rem;
+  color: var(--color-items-background);
+  margin: 0.5rem;
+}
+
+.Icon_delete {
+  font-size: 10rem !important;
+  color: var(--color-items-background);
   margin: 0.5rem;
 }
 
@@ -67,7 +90,14 @@
 }
 
 .one-edge-shadow {
-  -webkit-box-shadow: 0 8px 6px -6px black;
-  -moz-box-shadow: 0 8px 6px -6px black;
-  box-shadow: 0 8px 6px -6px black;
+  -webkit-box-shadow: 0 8px 6px -6px #777;
+  -moz-box-shadow: 0 8px 6px -6px #777;
+  box-shadow: 0 8px 6px -6px #777;
+}
+
+.grow {
+  transition: all 0.5s ease-in-out;
+}
+.grow:hover {
+  transform: scale(1.4);
 }

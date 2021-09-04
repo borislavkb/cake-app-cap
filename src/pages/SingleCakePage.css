@@ -7,19 +7,23 @@
 }
 
 .SinglePage__content {
-  justify-content: center;
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   overflow-y: scroll;
   background-color: var(--color-background);
 }
 
-.SinglePage__cake--image  {
+.SinglePage__cake--image {
   height: 7rem;
   width: 7rem;
 }
 
-img {
-  height: 7rem;
-  width: 7rem;
+.SinglePage__cake--title {
+  color: var(--color-text);
+}
+
+.SinglePage__cake--text {
+  color: var(--color-text);
 }

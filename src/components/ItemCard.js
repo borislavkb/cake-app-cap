@@ -1,10 +1,14 @@
 import "./ItemCard.css";
-import { RiFilePaper2Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import { IoHeart, IoHeartOutline } from "react-icons/io5";
+import {
+  IoHeart,
+  IoHeartOutline,
+  IoTrashBinOutline,
+  IoBookOutline,
+} from "react-icons/io5";
 import defaultImage from "../images/chocolate.png";
 
-export default function ItemCard({ object, paramsId, onDelete, onToggleFav }) {
+export default function ItemCard({ object, onDelete, onToggleFav }) {
   function handleDeleteItemFromList() {
     onDelete(object);
   }
@@ -18,33 +22,33 @@ export default function ItemCard({ object, paramsId, onDelete, onToggleFav }) {
       <img
         src={!object.image_url ? defaultImage : object.image_url}
         alt="description"
-        className="ItemCard__image"
+        className="ItemCard__image grow"
       />
 
       <h2 className="ItemCard__name">{object.cakeName}</h2>
       <div className="ItemCard__button--box">
-        <button
-          className="ItemCard__button delete"
+        <icon
+          className="ItemCard__button left"
           onClick={() => handleDeleteItemFromList(object.id)}
         >
-          X
-        </button>
-        <button className="ItemCard__button--fav">
+          <IoTrashBinOutline className="Icon_card" />
+        </icon>
+        <icon className="ItemCard__button">
           {object.isFav ? (
             <IoHeart
-              className="Icon"
+              className="Icon_card"
               onClick={() => handleToggleFavouriteCake(object.id)}
             />
           ) : (
             <IoHeartOutline
-              className="Icon"
+              className="Icon_card"
               onClick={() => handleToggleFavouriteCake(object.id)}
             />
           )}
-        </button>
+        </icon>
 
-        <Link to={`/owncakes/${object.id}`}>
-          <RiFilePaper2Line className="Icon" />
+        <Link to={`/cakes/${object.id}`} className="ItemCard__button right">
+          <IoBookOutline className="Icon_card" />
         </Link>
       </div>
     </li>
