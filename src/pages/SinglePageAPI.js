@@ -44,7 +44,9 @@ export default function ListAPISinglePage() {
           />
           <br></br>
 
-          <a href={recipeAPI?.recipe.url}>External Link</a>
+          <a href={recipeAPI?.recipe.url} className="SinglePageAPI__link">
+            Link to the external source of the recipe
+          </a>
         </div>
       </main>
     );

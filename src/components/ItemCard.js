@@ -22,7 +22,7 @@ export default function ItemCard({ object, onDelete, onToggleFav }) {
       <img
         src={!object.image_url ? defaultImage : object.image_url}
         alt="description"
-        className="ItemCard__image"
+        className="ItemCard__image grow"
       />
 
       <h2 className="ItemCard__name">{object.cakeName}</h2>
